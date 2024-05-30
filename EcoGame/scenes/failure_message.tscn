@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://puo5dopegvae"]
+
+[ext_resource type="Script" path="res://scripts/failure_message.gd" id="1_7xqb2"]
+[ext_resource type="Texture2D" uid="uid://bdwuydedfvte4" path="res://assets/failure_placeholder.png" id="1_24v7h"]
+
+[node name="FailureMessage" type="Node2D"]
+script = ExtResource("1_7xqb2")
+
+[node name="TimerPlaceholder" type="Label" parent="."]
+offset_left = 216.0
+offset_top = 670.0
+offset_right = 532.0
+offset_bottom = 718.0
+
+[node name="Button" type="Button" parent="."]
+offset_left = 213.0
+offset_top = 490.0
+offset_right = 541.0
+offset_bottom = 619.0
+action_mode = 0
+icon = ExtResource("1_24v7h")
+
+[node name="Timeout" type="Timer" parent="."]
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="timeout" from="Timeout" to="." method="_on_timeout_timeout"]

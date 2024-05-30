@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://dbc82t5m02cor"]
+
+[ext_resource type="Script" path="res://scripts/success_message.gd" id="1_83063"]
+[ext_resource type="Texture2D" uid="uid://b6vxmaf2hug4p" path="res://assets/success_placeholder.png" id="1_lild3"]
+
+[node name="SuccessMessage" type="Node2D"]
+script = ExtResource("1_83063")
+
+[node name="SuccessPlaceholder" type="Sprite2D" parent="."]
+position = Vector2(367, 513)
+texture = ExtResource("1_lild3")
