@@ -1,41 +1,36 @@
-[gd_scene load_steps=5 format=3 uid="uid://dbc82t5m02cor"]
+[gd_scene load_steps=7 format=3 uid="uid://puo5dopegvae"]
 
-[ext_resource type="Script" path="res://scripts/success_message.gd" id="1_83063"]
-[ext_resource type="Texture2D" uid="uid://0wf5o0p6dhv7" path="res://assets/WoodPanelSuccess.png" id="2_4all6"]
-[ext_resource type="Texture2D" uid="uid://cjt43p8qfysp1" path="res://assets/placeholderSwipe.png" id="3_ntaum"]
+[ext_resource type="Script" path="res://scripts/failure_message.gd" id="1_7xqb2"]
+[ext_resource type="Texture2D" uid="uid://riuuhbt8u48e" path="res://assets/WoodPanelFail.png" id="2_o4pdk"]
+[ext_resource type="Texture2D" uid="uid://utbu2rahuxcp" path="res://assets/CancelButton.png" id="3_aldxj"]
+[ext_resource type="Script" path="res://scripts/CloseButton.gd" id="4_pugdu"]
+[ext_resource type="Texture2D" uid="uid://61rne3h0mauo" path="res://assets/CancelButtonHighlighted.png" id="4_xjj14"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_tv752"]
-font_size = 23
+[sub_resource type="LabelSettings" id="LabelSettings_163df"]
+font_size = 27
 
-[node name="SuccessMessage" type="Node2D"]
-position = Vector2(360, 371)
-scale = Vector2(1.5, 1.5)
-script = ExtResource("1_83063")
+[node name="FailureMessage" type="Node2D"]
+position = Vector2(366, 504)
+script = ExtResource("1_7xqb2")
 
 [node name="WoodenPanel" type="Sprite2D" parent="."]
-texture = ExtResource("2_4all6")
-
-[node name="MinigamePreview" type="Sprite2D" parent="."]
-z_index = -1
-position = Vector2(88, -125)
-scale = Vector2(0.548077, 0.197465)
-texture = ExtResource("3_ntaum")
+texture = ExtResource("2_o4pdk")
 
 [node name="MinigameName" type="Label" parent="."]
-offset_left = -182.0
-offset_top = -164.0
-offset_bottom = -128.0
+offset_left = -114.0
+offset_top = -128.0
+offset_right = 113.0
+offset_bottom = -86.0
 text = "MinigameName"
-label_settings = SubResource("LabelSettings_tv752")
+label_settings = SubResource("LabelSettings_163df")
 horizontal_alignment = 1
-vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="MinigameInformations" type="RichTextLabel" parent="."]
-offset_left = -181.0
-offset_top = -58.0
-offset_right = 180.0
-offset_bottom = 185.0
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = -168.0
+offset_top = -67.0
+offset_right = 169.0
+offset_bottom = 174.0
 text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec venenatis imperdiet mollis. Aenean in dolor nisl. Nunc in placerat ligula, nec sodales nisi. Pellentesque faucibus risus sit amet mauris lobortis, non porta magna porta. Vivamus feugiat lectus ante, at maximus quam suscipit eu. Cras nisi odio, porta et massa at, varius ultricies erat. Aliquam tincidunt lectus id velit vestibulum fermentum. Praesent aliquet egestas egestas. Duis neque elit, tempor ut tristique eget, pretium vel tellus. Nunc dictum massa id semper ornare. Nunc rutrum velit eget bibendum semper. Mauris non ex elit. Fusce turpis nunc, dictum faucibus gravida nec, efficitur a ex. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce pulvinar purus at venenatis egestas.
 
 Praesent et feugiat libero, vitae pulvinar augue. Quisque feugiat placerat est eu volutpat. Nulla et elementum purus, quis euismod velit. Mauris a porttitor mi. Nunc blandit tortor ac neque tempus, a pharetra elit feugiat. Donec blandit tincidunt justo quis tempor. Sed fringilla consequat quam, vitae accumsan quam vestibulum id. In tempus velit nulla, et mollis lorem porttitor sed. Nullam non aliquet lorem. Pellentesque porttitor nulla eget dolor placerat, at mollis metus mattis. Donec eu nisl viverra, porttitor diam non, pharetra mauris.
@@ -46,3 +41,28 @@ Nunc at condimentum metus. Quisque ut aliquam odio. Curabitur lobortis porttitor
 
 Vivamus vitae imperdiet elit, a gravida justo. Ut at aliquam magna. Aenean justo tortor, eleifend a justo ut, viverra sodales justo. Nulla non quam at velit convallis bibendum et condimentum arcu. Aenean maximus, mauris non pulvinar tincidunt, purus risus bibendum ex, vitae hendrerit ipsum velit vel diam. Donec non magna felis. Vivamus vel metus velit. Cras efficitur arcu id sem tincidunt, eu mattis ante rutrum. Curabitur iaculis suscipit neque sed placerat. Maecenas sed condimentum felis, in vestibulum metus. Duis nulla eros, imperdiet non mauris sit amet, malesuada vulputate metus. Quisque sollicitudin velit consectetur dapibus commodo. Mauris malesuada vel odio vel viverra. Sed molestie turpis varius, bibendum ante ut, condimentum turpis. "
 metadata/_edit_use_anchors_ = true
+
+[node name="CloseButton" type="Button" parent="."]
+offset_left = 158.0
+offset_top = -232.0
+offset_right = 216.0
+offset_bottom = -174.0
+tooltip_text = "Closes the correction tab."
+action_mode = 0
+flat = true
+icon_alignment = 1
+script = ExtResource("4_pugdu")
+
+[node name="Highlighted" type="Sprite2D" parent="CloseButton"]
+position = Vector2(-158, 232)
+texture = ExtResource("4_xjj14")
+
+[node name="NonHighlighted" type="Sprite2D" parent="CloseButton"]
+texture = ExtResource("3_aldxj")
+
+[node name="Timeout" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+
+[connection signal="pressed" from="CloseButton" to="." method="_on_close_button_pressed"]
+[connection signal="timeout" from="Timeout" to="." method="_on_timeout_timeout"]

@@ -26,6 +26,8 @@ func LoadMessage():
 	
 	currentMessage = Utilities.CreateInstance(playlist[playlistIndex],self)
 	
+	currentMessage.ShowMessage()
+	
 	RefreshButtonsStates()
 
 func RefreshButtonsStates():

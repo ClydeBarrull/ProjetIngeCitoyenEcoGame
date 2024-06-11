@@ -7,14 +7,14 @@ script = ExtResource("1_6ovto")
 
 [node name="Next" type="Button" parent="."]
 offset_left = 409.0
-offset_top = 720.0
+offset_top = 821.0
 offset_right = 646.0
 offset_bottom = 929.0
 text = "Next"
 
 [node name="Previous" type="Button" parent="."]
 offset_left = 94.0
-offset_top = 720.0
+offset_top = 821.0
 offset_right = 320.0
 offset_bottom = 929.0
 disabled = true
