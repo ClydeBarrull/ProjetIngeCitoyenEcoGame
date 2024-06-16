@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://d0y7c8of4d6j1"]
+
+[ext_resource type="Script" path="res://scripts/minigame.gd" id="1_4i122"]
+[ext_resource type="PackedScene" uid="uid://1o6bqyw2dgmp" path="res://scenes/SwipeMinigame/swipe_gameplay.tscn" id="2_0nnkn"]
+[ext_resource type="PackedScene" uid="uid://dbc82t5m02cor" path="res://scenes/success_message.tscn" id="3_wt4wx"]
+[ext_resource type="PackedScene" uid="uid://puo5dopegvae" path="res://scenes/failure_message.tscn" id="4_yc47u"]
+
+[node name="Minigame" type="Node"]
+script = ExtResource("1_4i122")
+
+[node name="SwipeGameplay" parent="." instance=ExtResource("2_0nnkn")]
+
+[node name="SuccessMessage" parent="." instance=ExtResource("3_wt4wx")]
+
+[node name="FailureMessage" parent="." instance=ExtResource("4_yc47u")]
+z_index = 100
+position = Vector2(363, 530)
+scale = Vector2(1.5, 1.5)

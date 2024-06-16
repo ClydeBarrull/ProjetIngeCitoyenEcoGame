@@ -1,0 +1,59 @@
+[gd_scene load_steps=6 format=3 uid="uid://1o6bqyw2dgmp"]
+
+[ext_resource type="Script" path="res://scripts/SwipeMinigame/swipe_gameplay.gd" id="1_ke5vq"]
+[ext_resource type="Texture2D" uid="uid://sv2fyldkf3pm" path="res://assets/SwipeMinigame/PlaceholderSwipeOuter.png" id="2_jkvjh"]
+[ext_resource type="Script" path="res://scenes/SwipeMinigame/SwipeableItemList.gd" id="3_efuyh"]
+[ext_resource type="Texture2D" uid="uid://ccepd7sesxa0h" path="res://assets/SwipeMinigame/BikePlaceholder.png" id="4_0fprw"]
+[ext_resource type="Script" path="res://scripts/SwipeMinigame/SwipeableItem.gd" id="5_6kkok"]
+
+[node name="SwipeGameplay" type="Node2D"]
+script = ExtResource("1_ke5vq")
+TimeLimit = 10
+WrongsThreshold = 2
+CorrectsThresholds = 5
+
+[node name="FakeInterface" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(360, 542)
+texture = ExtResource("2_jkvjh")
+
+[node name="SwipeableItems" type="Node" parent="."]
+script = ExtResource("3_efuyh")
+
+[node name="SwipeableItem" type="Sprite2D" parent="SwipeableItems"]
+position = Vector2(360, 543.5)
+texture = ExtResource("4_0fprw")
+script = ExtResource("5_6kkok")
+isCorrect = true
+
+[node name="SwipeableItem2" type="Sprite2D" parent="SwipeableItems"]
+position = Vector2(360, 543.5)
+texture = ExtResource("4_0fprw")
+script = ExtResource("5_6kkok")
+
+[node name="SwipeableItem3" type="Sprite2D" parent="SwipeableItems"]
+position = Vector2(360, 543.5)
+texture = ExtResource("4_0fprw")
+script = ExtResource("5_6kkok")
+
+[node name="SwipeableItem4" type="Sprite2D" parent="SwipeableItems"]
+position = Vector2(360, 543.5)
+texture = ExtResource("4_0fprw")
+script = ExtResource("5_6kkok")
+isCorrect = true
+
+[node name="SwipeableItem5" type="Sprite2D" parent="SwipeableItems"]
+position = Vector2(360, 543.5)
+texture = ExtResource("4_0fprw")
+script = ExtResource("5_6kkok")
+isCorrect = true
+
+[node name="SwipeableItem6" type="Sprite2D" parent="SwipeableItems"]
+position = Vector2(360, 543.5)
+texture = ExtResource("4_0fprw")
+script = ExtResource("5_6kkok")
+
+[node name="SwipeableItem7" type="Sprite2D" parent="SwipeableItems"]
+position = Vector2(360, 543.5)
+texture = ExtResource("4_0fprw")
+script = ExtResource("5_6kkok")

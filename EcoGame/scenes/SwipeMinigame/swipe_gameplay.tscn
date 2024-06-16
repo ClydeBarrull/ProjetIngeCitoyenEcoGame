@@ -1,0 +1,70 @@
+[gd_scene load_steps=10 format=3 uid="uid://1o6bqyw2dgmp"]
+
+[ext_resource type="Script" path="res://scripts/SwipeMinigame/swipe_gameplay.gd" id="1_ke5vq"]
+[ext_resource type="Texture2D" uid="uid://xiqmmmat6ro6" path="res://assets/SwipeMinigame/SwipePanel.png" id="2_a1g21"]
+[ext_resource type="Script" path="res://scenes/SwipeMinigame/SwipeableItemList.gd" id="3_efuyh"]
+[ext_resource type="Texture2D" uid="uid://ca7y5f412fgmq" path="res://assets/SwipeMinigame/SwipeMinigameBike.png" id="4_xjw6x"]
+[ext_resource type="Script" path="res://scripts/SwipeMinigame/SwipeableItem.gd" id="5_6kkok"]
+[ext_resource type="Texture2D" uid="uid://4plcgc4m5qe6" path="res://assets/SwipeMinigame/SwipeMinigameTram.png" id="6_rxdx8"]
+[ext_resource type="Texture2D" uid="uid://c8qb206sha8ct" path="res://assets/SwipeMinigame/SwipeMinigameVoitureElectrique.png" id="7_hxlky"]
+[ext_resource type="Texture2D" uid="uid://cpw5k8c8po287" path="res://assets/SwipeMinigame/SwipeMinigameVoitureEssence.png" id="8_0bcx6"]
+[ext_resource type="PackedScene" uid="uid://dsbpu47u2oyp4" path="res://scenes/fail_gauge.tscn" id="9_whccl"]
+
+[node name="SwipeGameplay" type="Node2D"]
+script = ExtResource("1_ke5vq")
+WrongsThreshold = 2
+CorrectsThresholds = 5
+
+[node name="FakeInterface" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(360, 542)
+texture = ExtResource("2_a1g21")
+
+[node name="SwipeableItems" type="Node" parent="."]
+script = ExtResource("3_efuyh")
+
+[node name="SwipeableItem" type="Sprite2D" parent="SwipeableItems"]
+position = Vector2(360, 543.5)
+texture = ExtResource("4_xjw6x")
+script = ExtResource("5_6kkok")
+isCorrect = true
+
+[node name="SwipeableItem3" type="Sprite2D" parent="SwipeableItems"]
+position = Vector2(360, 543.5)
+texture = ExtResource("6_rxdx8")
+script = ExtResource("5_6kkok")
+isCorrect = true
+
+[node name="SwipeableItem4" type="Sprite2D" parent="SwipeableItems"]
+position = Vector2(360, 543.5)
+texture = ExtResource("7_hxlky")
+script = ExtResource("5_6kkok")
+isCorrect = true
+
+[node name="SwipeableItem5" type="Sprite2D" parent="SwipeableItems"]
+position = Vector2(360, 543.5)
+texture = ExtResource("8_0bcx6")
+script = ExtResource("5_6kkok")
+
+[node name="SwipeableItem6" type="Sprite2D" parent="SwipeableItems"]
+position = Vector2(360, 543.5)
+texture = ExtResource("4_xjw6x")
+script = ExtResource("5_6kkok")
+isCorrect = true
+
+[node name="SwipeableItem7" type="Sprite2D" parent="SwipeableItems"]
+position = Vector2(360, 543.5)
+texture = ExtResource("7_hxlky")
+script = ExtResource("5_6kkok")
+isCorrect = true
+
+[node name="SwipeableItem8" type="Sprite2D" parent="SwipeableItems"]
+position = Vector2(360, 543.5)
+texture = ExtResource("8_0bcx6")
+script = ExtResource("5_6kkok")
+
+[node name="FailGauge" parent="." instance=ExtResource("9_whccl")]
+z_index = 25
+position = Vector2(649, 61)
+NumberOfMissesAllowed = 2
+direction = "Left"

@@ -1,0 +1,56 @@
+[gd_scene load_steps=10 format=3 uid="uid://do8u7ak1webh3"]
+
+[ext_resource type="Script" path="res://scripts/bomb_timer.gd" id="1_sldjd"]
+[ext_resource type="Script" path="res://scripts/bomb_timer_component.gd" id="2_lt4e3"]
+[ext_resource type="Texture2D" uid="uid://c0o3k7sge5vtu" path="res://assets/TickingEarth1.png" id="2_vioaf"]
+[ext_resource type="Texture2D" uid="uid://cg5wda8tvxlvs" path="res://assets/TickingEarth2.png" id="3_6cfna"]
+[ext_resource type="Texture2D" uid="uid://bnhp8o5jl1igr" path="res://assets/TickingEarth3.png" id="3_raldt"]
+[ext_resource type="Texture2D" uid="uid://ctsxbf24ke4ps" path="res://assets/TickingEarth4.png" id="4_gakl7"]
+[ext_resource type="Texture2D" uid="uid://yfaa7h3niww5" path="res://assets/TickingEarth5.png" id="5_rh76w"]
+
+[sub_resource type="SystemFont" id="SystemFont_aoxyq"]
+font_names = PackedStringArray("LEMON MILK")
+
+[sub_resource type="LabelSettings" id="LabelSettings_e8107"]
+font = SubResource("SystemFont_aoxyq")
+font_size = 45
+
+[node name="BombTimer" type="Node2D"]
+z_index = 90
+position = Vector2(360, 1023)
+script = ExtResource("1_sldjd")
+
+[node name="Timer" type="Timer" parent="."]
+script = ExtResource("2_lt4e3")
+
+[node name="TimeLeftCounter" type="Label" parent="."]
+z_index = 99
+offset_left = -347.0
+offset_top = -36.0
+offset_right = -277.0
+offset_bottom = 36.0
+text = "0"
+label_settings = SubResource("LabelSettings_e8107")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="State1" type="Sprite2D" parent="."]
+texture = ExtResource("2_vioaf")
+
+[node name="State2" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("3_6cfna")
+
+[node name="State3" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("3_raldt")
+
+[node name="State4" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("4_gakl7")
+
+[node name="State5" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("5_rh76w")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

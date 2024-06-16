@@ -9,6 +9,15 @@ static func getFirstChildOfType(parentNode:Node, type):
 			return children
 	print("No child of type " + var_to_str(type) + " found ! check for missing nodes or bad calls.")
 
+static func GetListoFChildOfType(parentNode:Node, type):
+	var childOfTypeList = []
+	for children in parentNode.get_children() :
+		if (is_instance_of(children,type)):
+			childOfTypeList.append(children)
+	
+	if (childOfTypeList == []):
+		push_error("No child of type " + var_to_str(type) + " found ! check for missing nodes or bad calls.")
+	return childOfTypeList
 
 static func CreateInstance(sceneName:String, caller:Node, constructionParameters:Array = []):
 	var scene = load(sceneName);

@@ -1,0 +1,48 @@
+[gd_scene load_steps=5 format=3 uid="uid://bvomp8b1nxb17"]
+
+[ext_resource type="Script" path="res://scripts/leaf_curtain.gd" id="1_gxjur"]
+[ext_resource type="Texture2D" uid="uid://ctmvpblgl022d" path="res://assets/bunchOfLeaves.png" id="2_4yanp"]
+
+[sub_resource type="Animation" id="Animation_3wrso"]
+resource_name = "LowerTheCurtain"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.5, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 650), Vector2(0, 650), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5exgt"]
+_data = {
+"LowerTheCurtain": SubResource("Animation_3wrso")
+}
+
+[node name="LeafCurtain" type="Node2D"]
+position = Vector2(360, 540)
+script = ExtResource("1_gxjur")
+
+[node name="UpperCurtain" type="Sprite2D" parent="."]
+position = Vector2(0, -900)
+texture = ExtResource("2_4yanp")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="UpperCurtain"]
+libraries = {
+"": SubResource("AnimationLibrary_5exgt")
+}
+
+[node name="LowerCurtain" type="Sprite2D" parent="."]
+position = Vector2(0, 900)
+rotation = -3.14159
+texture = ExtResource("2_4yanp")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="LowerCurtain"]
+libraries = {
+"": SubResource("AnimationLibrary_5exgt")
+}
