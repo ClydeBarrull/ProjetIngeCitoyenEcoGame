@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://cpqfvwk0vfqik"]
+
+[ext_resource type="Script" path="res://scripts/ShutDownTheLights/CharacterInstanciate.gd" id="1_5w2n8"]
+[ext_resource type="PackedScene" uid="uid://bohlu38l62boo" path="res://scenes/ShutDownTheLights/Building.tscn" id="2_jd2hy"]
+
+[node name="LightsMiniGame" type="Node2D"]
+script = ExtResource("1_5w2n8")
+
+[node name="Building" parent="." instance=ExtResource("2_jd2hy")]
