@@ -29,6 +29,6 @@ func set_state(state):
 func update_button_color():
 	# Mettre à jour la couleur du bouton en fonction de l'état
 	if current_state == State.ON:
-		self.modulate = Color(1, 1, 0)  # Jaune (valeur RGB)
+		self.modulate = Color(10, 10, 5)  # Jaune vif (valeur RGB ajustée)
 	else:
 		self.modulate = Color(0, 0, 0)  # Noir (valeur RGB)

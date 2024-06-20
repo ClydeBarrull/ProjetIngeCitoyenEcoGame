@@ -12,31 +12,31 @@
 script = ExtResource("1_5w2n8")
 
 [node name="Character" parent="Node2D" instance=ExtResource("3_txi3l")]
-position = Vector2(325, 298)
+position = Vector2(325, 318)
 
 [node name="Character2" parent="Node2D" instance=ExtResource("3_txi3l")]
 position = Vector2(451, 685)
 
 [node name="Character3" parent="Node2D" instance=ExtResource("3_txi3l")]
-position = Vector2(194, 136)
+position = Vector2(190, 175)
 
 [node name="Character4" parent="Node2D" instance=ExtResource("3_txi3l")]
-position = Vector2(455, 145)
+position = Vector2(431, 177)
 
 [node name="Character5" parent="Node2D" instance=ExtResource("3_txi3l")]
-position = Vector2(151, 281)
+position = Vector2(151, 316)
 
 [node name="Character6" parent="Node2D" instance=ExtResource("3_txi3l")]
 position = Vector2(449, 315)
 
 [node name="Character7" parent="Node2D" instance=ExtResource("3_txi3l")]
-position = Vector2(155, 510)
+position = Vector2(155, 533)
 
 [node name="Character8" parent="Node2D" instance=ExtResource("3_txi3l")]
-position = Vector2(434, 530)
+position = Vector2(431, 539)
 
 [node name="Character9" parent="Node2D" instance=ExtResource("3_txi3l")]
 position = Vector2(325, 681)
 
 [node name="Character10" parent="Node2D" instance=ExtResource("3_txi3l")]
-position = Vector2(275, 523)
+position = Vector2(275, 538)
