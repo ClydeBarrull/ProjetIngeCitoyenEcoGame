@@ -1,5 +1,7 @@
 extends Button
 
+class_name WindowButton
+
 enum State {
 	ON,
 	OFF
@@ -13,6 +15,9 @@ func _ready():
 		set_state(State.ON)
 	else:
 		set_state(State.OFF)
+
+	# Connexion du signal "pressed" à la méthode "_on_Button_pressed"
+	connect("pressed", Callable(self, "_on_Button_pressed"))
 
 func _on_Button_pressed():
 	# Gérer le changement d'état lorsqu'on appuie sur le bouton
@@ -29,6 +34,6 @@ func set_state(state):
 func update_button_color():
 	# Mettre à jour la couleur du bouton en fonction de l'état
 	if current_state == State.ON:
-		self.modulate = Color(10, 10, 5)  # Jaune vif (valeur RGB ajustée)
+		self.modulate = Color(10, 10, 5)  # Jaune vif
 	else:
-		self.modulate = Color(0, 0, 0)  # Noir (valeur RGB)
+		self.modulate = Color(0, 0, 0)  # Noir
