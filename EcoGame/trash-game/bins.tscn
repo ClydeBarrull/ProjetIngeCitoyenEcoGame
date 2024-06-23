@@ -1,0 +1,34 @@
+[gd_scene load_steps=4 format=3 uid="uid://dbg8p5sukphye"]
+
+[ext_resource type="Texture2D" uid="uid://cx1evkwyxpt6a" path="res://trash-game/assets/recycle_bin.png" id="1_vtj58"]
+
+[sub_resource type="GDScript" id="GDScript_nmk3s"]
+script/source = "extends Node
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3eutu"]
+size = Vector2(336.319, 785.482)
+
+[node name="bins" type="Node2D"]
+script = SubResource("GDScript_nmk3s")
+
+[node name="RecycleBin" type="Sprite2D" parent="."]
+position = Vector2(364, 213)
+scale = Vector2(0.451952, 0.451952)
+texture = ExtResource("1_vtj58")
+
+[node name="Area2D" type="Area2D" parent="RecycleBin"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RecycleBin/Area2D"]
+position = Vector2(2.21265, -1.10638)
+shape = SubResource("RectangleShape2D_3eutu")
