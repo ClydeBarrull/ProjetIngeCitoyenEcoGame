@@ -13,6 +13,8 @@ var next_direction_change_time = 0.0
 
 func _ready():
 	# Initialiser la direction de manière aléatoire
+	get_node("Sprite2D/Sprite2D").visible = false  # Assurez-vous que le chemin est correct vers votre Sprite2D enfant
+	
 	if randf() > 0.5:
 		direction = Vector2.RIGHT
 	else:
@@ -49,3 +51,7 @@ func set_next_direction_change():
 	# Définir le temps avant le prochain changement de direction aléatoire
 	next_direction_change_time = randf_range(change_direction_interval_min, change_direction_interval_max)
 	time_since_last_direction_change = 0.0
+
+func show_character_sprite(visible):
+	print("Showing character sprite:", visible)
+	get_node("Sprite2D").visible = visible
