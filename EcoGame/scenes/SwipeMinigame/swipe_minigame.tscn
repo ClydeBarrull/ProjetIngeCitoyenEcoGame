@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/minigame.gd" id="1_4i122"]
 [ext_resource type="PackedScene" uid="uid://1o6bqyw2dgmp" path="res://scenes/SwipeMinigame/swipe_gameplay.tscn" id="2_0nnkn"]
-[ext_resource type="PackedScene" uid="uid://dbc82t5m02cor" path="res://scenes/success_message.tscn" id="3_wt4wx"]
+[ext_resource type="PackedScene" uid="uid://cxxf3m62xlxci" path="res://scenes/SwipeMinigame/success_message.tscn" id="3_hamir"]
 [ext_resource type="PackedScene" uid="uid://puo5dopegvae" path="res://scenes/failure_message.tscn" id="4_yc47u"]
 
 [node name="Minigame" type="Node"]
@@ -10,9 +10,20 @@ script = ExtResource("1_4i122")
 
 [node name="SwipeGameplay" parent="." instance=ExtResource("2_0nnkn")]
 
-[node name="SuccessMessage" parent="." instance=ExtResource("3_wt4wx")]
+[node name="SuccessMessage" parent="." instance=ExtResource("3_hamir")]
 
 [node name="FailureMessage" parent="." instance=ExtResource("4_yc47u")]
-z_index = 100
-position = Vector2(363, 530)
-scale = Vector2(1.5, 1.5)
+z_index = 99
+
+[node name="MinigameName" parent="FailureMessage" index="1"]
+offset_left = -174.0
+offset_right = 175.0
+text = "Swipe! Transports Citadins"
+
+[node name="RichTextLabel" parent="FailureMessage" index="2"]
+offset_top = -74.0
+offset_bottom = 167.0
+text = "Dans un contexte urbain, certains modes de transport sont considérés comme moins polluants que d'autres en raison de divers facteurs liés à leurs émissions directes de polluants, leur efficacité énergétique et leur utilisation des ressources. Dans ce mini-jeu, le focus est de swiper à droite les véhicules provoquant moins (voire pas) d'émissions directes de gaz à effet de serre.
+Source : https://www.notre-environnement.gouv.fr/themes/climat/les-emissions-de-gaz-a-effet-de-serre-et-l-empreinte-carbone-ressources/article/les-emissions-de-gaz-a-effet-de-serre-du-secteur-des-transports"
+
+[editable path="FailureMessage"]

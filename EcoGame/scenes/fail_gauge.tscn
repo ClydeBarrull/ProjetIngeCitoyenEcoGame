@@ -8,7 +8,6 @@
 [node name="FailGauge" type="Node2D"]
 position = Vector2(365, 533)
 script = ExtResource("1_y123w")
-NumberOfMissesAllowed = 10
 
 [node name="Failable" type="Node2D" parent="."]
 script = ExtResource("2_jpdjo")

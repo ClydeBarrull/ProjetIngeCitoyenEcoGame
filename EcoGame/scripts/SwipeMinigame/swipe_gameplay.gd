@@ -30,6 +30,7 @@ func WrongRegistered(howMany:int=1):
 	failGauge.failOne()
 	WrongsThreshold -= howMany
 	if (WrongsThreshold <= 0) :
+		SwipeableItemsList.vibratingText.stopsShaking()
 		Fail()
 	else:
 		isMoving = false

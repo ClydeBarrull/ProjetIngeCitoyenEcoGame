@@ -3,6 +3,7 @@ extends Node
 class_name SwipeableItemList
 
 var SwipeableItemsList : Array
+var vibratingText : VibratingText
 
 var currentItem : SwipeableItem
 var currentIndex : int = 0
@@ -11,7 +12,9 @@ signal CorrectSwipe
 signal WrongSwipe
 
 func _ready():
+	vibratingText = Utilities.getFirstChildOfType(self,VibratingText)
 	SwipeableItemsList = Utilities.GetListoFChildOfType(self,SwipeableItem)
+	SwipeableItemsList.shuffle()
 	var currentLayer = SwipeableItemsList.size() + 2
 	for children in SwipeableItemsList:
 		var childrenAsSprite = (children as Sprite2D)
@@ -34,9 +37,11 @@ func InitializeNext():
 	currentIndex += 1
 	
 func RegisteredCorrectSwipe():
+	vibratingText.showGoodMessage()
 	InitializeNext()
 	CorrectSwipe.emit()
 	
 func RegisteredWrongSwipe():
+	vibratingText.showBadMessage()
 	InitializeNext()
 	WrongSwipe.emit()

@@ -2,7 +2,7 @@ extends Sprite2D
 
 class_name SwipeableItem
 
-@export var isCorrect : bool
+@export var toBeSwipedRight : bool
 @export var speed : int = 3
 
 var SwipeLength : int
@@ -38,7 +38,7 @@ func GoLeft():
 	
 func CheckIfSwipeIsRight():
 	Moving = false
-	if ((isCorrect and SwipedRight) or (!isCorrect and !SwipedRight)) :
+	if ((toBeSwipedRight and SwipedRight) or (!toBeSwipedRight and !SwipedRight)) :
 		CorrectSwipe.emit()
 	else :
 		WrongSwipe.emit()
