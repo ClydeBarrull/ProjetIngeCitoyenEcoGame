@@ -2,7 +2,7 @@ extends Area2D
 
 class_name Waste_Area
 
-@export var tri : String = "vert"
+@export var tri : String = ""
 
 signal Correct
 signal Wrong
