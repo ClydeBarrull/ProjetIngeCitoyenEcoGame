@@ -1,19 +1,18 @@
 extends Area2D
 
-@export var bin_type : String = "vert" 
+@export var bin_type = ""
 
 func _ready():
-	connect("area_entered", Callable(self, "_on_Area2D_area_entered"))
-	connect("area_exited", Callable(self, "_on_Area2D_area_exited"))
+	bin_type = get_parent().bin_type
+	print("hi")
+	var touch_detection = get_node("../TouchDetection")
+	if touch_detection:
+		touch_detection.connect("input_event", Callable(self, "_on_TouchDetection_input_event"))
+	else:
+		print("TouchDetection node not found")
 
-func _on_Area2D_area_entered(area):
-#	var waste_tri = area.tri 
-#	print("A waste has entered with tri: ", waste_tri)
-#
-#	if waste_tri == bin_type: 
-#		print("Correct type of waste for this bin.")
-#		emit_signal("Correct")
-#	else:
-#		print("Incorrect type of waste for this bin.")
-#		emit_signal("Wrong")
-	pass
+func _on_TouchDetection_input_event(viewport, event, shape_idx):
+	if event is InputEventMouseButton and event.pressed:
+		await get_tree().create_timer(1.0).timeout
+		bin_type = get_parent().bin_type
+		print(bin_type)
