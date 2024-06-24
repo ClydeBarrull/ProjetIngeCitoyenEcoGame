@@ -1,33 +1,26 @@
-[gd_scene load_steps=11 format=3 uid="uid://dn3o5arxddhax"]
+[gd_scene load_steps=15 format=3 uid="uid://dn3o5arxddhax"]
 
 [ext_resource type="Script" path="res://trash-game/scripts/trashMinigame_gameplay.gd" id="1_b4ade"]
 [ext_resource type="Script" path="res://trash-game/scripts/WastesList.gd" id="2_rijis"]
-[ext_resource type="Texture2D" uid="uid://dbpmlwd2bdp38" path="res://trash-game/assets/waste_abg.png" id="3_3yct5"]
-[ext_resource type="Texture2D" uid="uid://cx1evkwyxpt6a" path="res://trash-game/assets/recycle_bin.png" id="4_aynlp"]
+[ext_resource type="Texture2D" uid="uid://dbpmlwd2bdp38" path="res://trash-game/assets/wastes/waste_abg.png" id="3_tchnd"]
 [ext_resource type="Script" path="res://trash-game/scripts/Wastes.gd" id="4_egs36"]
 [ext_resource type="Script" path="res://trash-game/scripts/Waste_Area.gd" id="5_cp2ob"]
+[ext_resource type="Texture2D" uid="uid://cx1evkwyxpt6a" path="res://trash-game/assets/bins/glass_bin.png" id="6_plkvr"]
+[ext_resource type="Texture2D" uid="uid://bckrw0083eh82" path="res://trash-game/assets/wastes/plastic_bottle.png" id="6_sxrup"]
+[ext_resource type="Script" path="res://trash-game/Bins.gd" id="7_fc33e"]
+[ext_resource type="Texture2D" uid="uid://6cqt0jvev0oh" path="res://trash-game/assets/wastes/glass_bottle.png" id="7_r87o7"]
 [ext_resource type="Script" path="res://trash-game/scripts/trashbin_collision.gd" id="7_uic8d"]
+[ext_resource type="Script" path="res://trash-game/TouchDetection.gd" id="8_yj6c0"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k0lai"]
-radius = 356.484
-height = 1056.25
+radius = 12.4278
+height = 56.1867
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pfwe8"]
 size = Vector2(260.276, 265.156)
 
-[sub_resource type="GDScript" id="GDScript_2ufat"]
-script/source = "extends CollisionShape2D
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-"
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xolwu"]
+size = Vector2(338.74, 824.622)
 
 [node name="trashgameplay" type="Node2D"]
 script = ExtResource("1_b4ade")
@@ -41,10 +34,12 @@ CorrectsThresholds = null
 script = ExtResource("2_rijis")
 
 [node name="Waste1" type="Sprite2D" parent="WastesList"]
+visible = false
 position = Vector2(378, 874)
 scale = Vector2(0.378698, 0.378698)
-texture = ExtResource("3_3yct5")
+texture = ExtResource("3_tchnd")
 script = ExtResource("4_egs36")
+tri = "regular"
 
 [node name="Waste" type="Area2D" parent="WastesList/Waste1"]
 position = Vector2(-5.28125, 29.0466)
@@ -54,15 +49,54 @@ tri = null
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WastesList/Waste1/Waste"]
 shape = SubResource("CapsuleShape2D_k0lai")
 
-[node name="RecycleBin" type="Sprite2D" parent="."]
+[node name="Waste2" type="Sprite2D" parent="WastesList"]
+position = Vector2(376, 878)
+scale = Vector2(3.75567, 3.75567)
+texture = ExtResource("6_sxrup")
+script = ExtResource("4_egs36")
+tri = "recycle"
+
+[node name="Waste" type="Area2D" parent="WastesList/Waste2"]
+position = Vector2(0.0866394, 1.46194)
+script = ExtResource("5_cp2ob")
+tri = null
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WastesList/Waste2/Waste"]
+shape = SubResource("CapsuleShape2D_k0lai")
+
+[node name="Waste3" type="Sprite2D" parent="WastesList"]
+position = Vector2(376, 878)
+scale = Vector2(3.75567, 3.75567)
+texture = ExtResource("7_r87o7")
+script = ExtResource("4_egs36")
+tri = "recycle"
+
+[node name="Waste" type="Area2D" parent="WastesList/Waste3"]
+position = Vector2(0.0866394, 1.46194)
+script = ExtResource("5_cp2ob")
+tri = null
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WastesList/Waste3/Waste"]
+shape = SubResource("CapsuleShape2D_k0lai")
+
+[node name="Bins" type="Sprite2D" parent="."]
 position = Vector2(364, 319.949)
 scale = Vector2(1.04505, 0.72033)
-texture = ExtResource("4_aynlp")
+texture = ExtResource("6_plkvr")
+script = ExtResource("7_fc33e")
 
-[node name="Bin" type="Area2D" parent="RecycleBin"]
+[node name="BinSelector" type="Area2D" parent="Bins"]
+scale = Vector2(1, 1)
 script = ExtResource("7_uic8d")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RecycleBin/Bin"]
-position = Vector2(5.74139, -269.944)
+[node name="CollisionWithWaste" type="CollisionShape2D" parent="Bins/BinSelector"]
+position = Vector2(5.74136, -269.944)
 shape = SubResource("RectangleShape2D_pfwe8")
-script = SubResource("GDScript_2ufat")
+
+[node name="TouchDetection" type="Area2D" parent="Bins"]
+script = ExtResource("8_yj6c0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bins/TouchDetection"]
+position = Vector2(5.74133, 0.0707092)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_xolwu")
