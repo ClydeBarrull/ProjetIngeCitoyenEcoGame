@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://c8qia8hu5t62x"]
+[gd_scene load_steps=6 format=3 uid="uid://c8qia8hu5t62x"]
 
 [ext_resource type="Texture2D" uid="uid://erxbcl1w0wpy" path="res://assets/ShutDownTheLights/Character.png" id="1_2vvbg"]
 [ext_resource type="Script" path="res://scripts/ShutDownTheLights/Character.gd" id="1_vguxf"]
@@ -37,9 +37,6 @@ _data = {
 "CharacterMovement": SubResource("Animation_epsw0")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_h61vj"]
-size = Vector2(26, 44)
-
 [node name="Character" type="Node2D"]
 script = ExtResource("1_vguxf")
 
@@ -56,9 +53,3 @@ texture = ExtResource("3_pua7k")
 libraries = {
 "": SubResource("AnimationLibrary_ymkge")
 }
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-visible = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-shape = SubResource("RectangleShape2D_h61vj")
