@@ -1,7 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://cpqfvwk0vfqik"]
+[gd_scene load_steps=4 format=3 uid="uid://cpqfvwk0vfqik"]
 
 [ext_resource type="Script" path="res://scripts/ShutDownTheLights/GameManagerSDTL.gd" id="1_4nigf"]
-[ext_resource type="Script" path="res://scripts/ShutDownTheLights/CharacterInstanciate.gd" id="1_5w2n8"]
 [ext_resource type="PackedScene" uid="uid://bohlu38l62boo" path="res://scenes/ShutDownTheLights/Building.tscn" id="2_jd2hy"]
 [ext_resource type="PackedScene" uid="uid://c8qia8hu5t62x" path="res://scenes/ShutDownTheLights/Character.tscn" id="3_txi3l"]
 
@@ -11,14 +10,16 @@ script = ExtResource("1_4nigf")
 [node name="Building" parent="." instance=ExtResource("2_jd2hy")]
 
 [node name="Node2D" type="Node2D" parent="."]
-position = Vector2(0, 823)
-script = ExtResource("1_5w2n8")
+position = Vector2(362, 823)
 
 [node name="Character" parent="Node2D" instance=ExtResource("3_txi3l")]
+position = Vector2(6, -630)
 
 [node name="Character2" parent="Node2D" instance=ExtResource("3_txi3l")]
+position = Vector2(-140, -179)
 
 [node name="Character3" parent="Node2D" instance=ExtResource("3_txi3l")]
+position = Vector2(116, -330)
 
 [node name="Character4" parent="Node2D" instance=ExtResource("3_txi3l")]
 

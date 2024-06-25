@@ -13,6 +13,13 @@ position = Vector2(314, 620)
 scale = Vector2(2.27628, 3.22533)
 texture = ExtResource("1_y0ud6")
 
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D"]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(18.0118, 1.19209e-07)
+scale = Vector2(0.0510833, 1)
+texture = ExtResource("1_y0ud6")
+
 [node name="Node2D" type="Node2D" parent="."]
 
 [node name="Button" type="Button" parent="Node2D"]
@@ -86,6 +93,7 @@ offset_bottom = 869.0
 script = ExtResource("2_0t2bb")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+visible = false
 
 [node name="Elevator" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(361, 522)
