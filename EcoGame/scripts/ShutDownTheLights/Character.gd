@@ -4,12 +4,14 @@ class_name Character
 
 var speed = 100
 var direction = Vector2.RIGHT
-var left_limit = 100
+var left_limit = 200
 var right_limit = 500
 var change_direction_interval_min = 1.0  # Intervalle minimal de temps en secondes pour le changement de direction
 var change_direction_interval_max = 3.0  # Intervalle maximal de temps en secondes pour le changement de direction
 var time_since_last_direction_change = 0.0
 var next_direction_change_time = 0.0
+
+var anim_player
 
 func _ready():
 	# Initialiser la direction de manière aléatoire
@@ -22,8 +24,12 @@ func _ready():
 	
 	# Initialiser le prochain changement de direction aléatoire
 	set_next_direction_change()
+	
+	anim_player = $AnimationPlayer
 
 func _process(delta):
+	anim_player.play("CharacterMovement")
+	
 	time_since_last_direction_change += delta
 	
 	# Vérifier s'il est temps de changer de direction

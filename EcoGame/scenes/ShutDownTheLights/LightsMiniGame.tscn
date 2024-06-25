@@ -14,36 +14,31 @@ script = ExtResource("1_4nigf")
 script = ExtResource("1_5w2n8")
 
 [node name="Character" parent="Node2D" instance=ExtResource("3_txi3l")]
-position = Vector2(325, 318)
+position = Vector2(462, 828)
 
 [node name="Character2" parent="Node2D" instance=ExtResource("3_txi3l")]
-position = Vector2(451, 685)
+position = Vector2(445, 687)
 
 [node name="Character3" parent="Node2D" instance=ExtResource("3_txi3l")]
-position = Vector2(190, 175)
+position = Vector2(276, 235)
 
 [node name="Character4" parent="Node2D" instance=ExtResource("3_txi3l")]
-position = Vector2(431, 177)
+position = Vector2(517, 237)
 
 [node name="Character5" parent="Node2D" instance=ExtResource("3_txi3l")]
-position = Vector2(151, 316)
+position = Vector2(220, 392)
 
 [node name="Character6" parent="Node2D" instance=ExtResource("3_txi3l")]
-position = Vector2(449, 315)
+position = Vector2(518, 391)
 
 [node name="Character7" parent="Node2D" instance=ExtResource("3_txi3l")]
-position = Vector2(155, 533)
+position = Vector2(228, 539)
 
 [node name="Character8" parent="Node2D" instance=ExtResource("3_txi3l")]
-position = Vector2(431, 539)
+position = Vector2(504, 545)
 
 [node name="Character9" parent="Node2D" instance=ExtResource("3_txi3l")]
-position = Vector2(325, 681)
+position = Vector2(319, 683)
 
 [node name="Character10" parent="Node2D" instance=ExtResource("3_txi3l")]
-position = Vector2(275, 538)
-
-[node name="Timer" type="Timer" parent="."]
-wait_time = 3.0
-one_shot = true
-autostart = true
+position = Vector2(249, 831)
