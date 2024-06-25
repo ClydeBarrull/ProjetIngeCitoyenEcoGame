@@ -85,10 +85,9 @@ offset_right = 573.0
 offset_bottom = 869.0
 script = ExtResource("2_0t2bb")
 
-[node name="Area2D" type="Area2D" parent="."]
-position = Vector2(361, 522)
-disable_mode = 2
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
 
-[node name="Elevator" type="CollisionShape2D" parent="Area2D"]
+[node name="Elevator" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(361, 522)
 shape = SubResource("RectangleShape2D_mwjlf")
 debug_color = Color(0.803922, 0.00392157, 0.996078, 0.486275)
