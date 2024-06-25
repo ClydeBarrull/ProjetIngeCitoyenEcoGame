@@ -6,10 +6,10 @@ func _ready():
 		var character = get_child(i)
 		
 		# Calculer une position aléatoire sur l'axe horizontal
-		var random_x = randf_range(100, 700)  # Utiliser randf_range pour un nombre flottant
+		var random_x = randf_range(100, 500)  # Utiliser randf_range pour un nombre flottant
 		
 		# Conserver la position verticale actuelle du personnage
-		var vertical_position = character.position.y
+		var vertical_position = 0
 		
 		# Définir la nouvelle position du personnage (avec l'axe vertical conservé)
 		character.position = Vector2(random_x, vertical_position)

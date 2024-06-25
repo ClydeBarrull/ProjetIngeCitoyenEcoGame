@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://bohlu38l62boo"]
+[gd_scene load_steps=4 format=3 uid="uid://bohlu38l62boo"]
 
 [ext_resource type="Texture2D" uid="uid://by2eousk36m1" path="res://assets/ShutDownTheLights/Building.png" id="1_y0ud6"]
 [ext_resource type="Script" path="res://scripts/ShutDownTheLights/WindowButton.gd" id="2_0t2bb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mwjlf"]
+size = Vector2(11, 826)
 
 [node name="Building" type="Node2D"]
 
@@ -81,3 +84,11 @@ offset_top = 747.0
 offset_right = 573.0
 offset_bottom = 869.0
 script = ExtResource("2_0t2bb")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(361, 522)
+disable_mode = 2
+
+[node name="Elevator" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_mwjlf")
+debug_color = Color(0.803922, 0.00392157, 0.996078, 0.486275)
