@@ -1,6 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://dg85pm2tsqe3o"]
-
-[ext_resource type="Texture2D" uid="uid://cx1evkwyxpt6a" path="res://trash-game/assets/bins/glass_bin.png" id="1_eavw7"]
+[gd_scene load_steps=4 format=3 uid="uid://b7t7a0l1sdg4f"]
 
 [sub_resource type="GDScript" id="GDScript_nmk3s"]
 script/source = "extends Node
@@ -16,6 +14,9 @@ func _process(delta):
 	pass
 "
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_wsqcu"]
+load_path = "res://.godot/imported/glass_bin.png-04b50129065b2359e103341161ab09c4.ctex"
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3eutu"]
 size = Vector2(336.319, 785.482)
 
@@ -25,7 +26,7 @@ script = SubResource("GDScript_nmk3s")
 [node name="RecycleBin" type="Sprite2D" parent="."]
 position = Vector2(364, 213)
 scale = Vector2(0.451952, 0.451952)
-texture = ExtResource("1_eavw7")
+texture = SubResource("CompressedTexture2D_wsqcu")
 
 [node name="Area2D" type="Area2D" parent="RecycleBin"]
 

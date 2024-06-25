@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dbpmlwd2bdp38"
-path="res://.godot/imported/waste_abg.png-b62cbd4a40d55c0f6b76f6eaab45cb59.ctex"
+uid="uid://crqlsv67x18pb"
+path="res://.godot/imported/minigame_preview.png-69a9301ce15acbd7b1566d6a978ffebd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://trash-game/assets/wastes/waste_abg.png"
-dest_files=["res://.godot/imported/waste_abg.png-b62cbd4a40d55c0f6b76f6eaab45cb59.ctex"]
+source_file="res://assets/wasteshooter/assets/minigame_preview.png"
+dest_files=["res://.godot/imported/minigame_preview.png-69a9301ce15acbd7b1566d6a978ffebd.ctex"]
 
 [params]
 

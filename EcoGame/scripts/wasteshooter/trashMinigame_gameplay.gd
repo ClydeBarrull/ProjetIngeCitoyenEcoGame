@@ -19,17 +19,17 @@ func _ready():
 		push_error("Not enough items")
 
 func _process(delta):
-	if SwipeableWasteList.currentWaste != null and state == STATES.PLAYING and !isMoving:
-		if Game.IsSwiped():
+	if SwipeableWasteList.currentWaste != null and state == STATES.PLAYING and not isMoving:
+		var swiped = Game.IsSwiped(Vector2i(0, 1), 1)  # Call with the speed parameter set to 1
+		if swiped:
 			isMoving = true
 			SwipeableWasteList.currentWaste.GoUp()
 
+
 func CorrectRegistered(howMany:int=1):
-	print("gameplay level insane")
 	numWaste -= howMany
 	print("remaining : ", numWaste)
 	if numWaste <= 0:
-		print("its over ???")
 		Wins()
 	else:
 		isMoving = false
