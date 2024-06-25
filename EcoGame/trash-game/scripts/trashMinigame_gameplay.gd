@@ -4,6 +4,7 @@ class_name TrashGameplay
 
 var SwipeableWasteList : WastesList
 var isMoving : bool = false
+@export var numWaste : int = 3
 
 func _ready():
 	print("TrashGameplay ready")
@@ -14,7 +15,7 @@ func _ready():
 	SwipeableWasteList.Success.connect(CorrectRegistered)
 	SwipeableWasteList.Failure.connect(FailureRegistered)  
 
-	if SwipeableWasteList.SwipeableWasteList.size() < CorrectsThresholds + WrongsThreshold:
+	if SwipeableWasteList.SwipeableWasteList.size() < numWaste + WrongsThreshold:
 		push_error("Not enough items")
 
 func _process(delta):
@@ -24,8 +25,11 @@ func _process(delta):
 			SwipeableWasteList.currentWaste.GoUp()
 
 func CorrectRegistered(howMany:int=1):
-	CorrectsThresholds -= howMany
-	if CorrectsThresholds <= 0:
+	print("gameplay level insane")
+	numWaste -= howMany
+	print("remaining : ", numWaste)
+	if numWaste <= 0:
+		print("its over ???")
 		Wins()
 	else:
 		isMoving = false
