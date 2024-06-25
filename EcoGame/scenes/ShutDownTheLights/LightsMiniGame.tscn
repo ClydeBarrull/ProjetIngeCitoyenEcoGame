@@ -34,3 +34,4 @@ position = Vector2(116, -330)
 [node name="Character9" parent="Node2D" instance=ExtResource("3_txi3l")]
 
 [node name="Character10" parent="Node2D" instance=ExtResource("3_txi3l")]
+position = Vector2(-171, -118)

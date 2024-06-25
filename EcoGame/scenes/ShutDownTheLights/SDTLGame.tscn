@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://doqhgr8wo6ygx"]
+
+[ext_resource type="Script" path="res://scripts/minigame.gd" id="1_0mbty"]
+[ext_resource type="PackedScene" uid="uid://cpqfvwk0vfqik" path="res://scenes/ShutDownTheLights/LightsMiniGame.tscn" id="1_cslhk"]
+[ext_resource type="PackedScene" uid="uid://cf3n7cd2dsmwr" path="res://scenes/ShutDownTheLights/success_messageSDTL.tscn" id="2_b1hym"]
+[ext_resource type="PackedScene" uid="uid://bdpbiy560s455" path="res://scenes/ShutDownTheLights/failure_messageSDTL.tscn" id="3_i4ba0"]
+
+[node name="SdtlGame" type="Node2D"]
+script = ExtResource("1_0mbty")
+
+[node name="LightsMiniGame" parent="." instance=ExtResource("1_cslhk")]
+
+[node name="SuccessMessage" parent="." instance=ExtResource("2_b1hym")]
+visible = false
+z_index = 2
+
+[node name="FailureMessage" parent="." instance=ExtResource("3_i4ba0")]
+visible = false
+z_index = 2

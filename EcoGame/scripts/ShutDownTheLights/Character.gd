@@ -17,9 +17,6 @@ var anim_player
 var floors = [0, -160, -310, -440, -600]
 
 func _ready():
-	# Rendre le Sprite2D enfant invisible par défaut
-	get_node("Sprite2D/Sprite2D").visible = false
-	
 	# Initialiser la direction de manière aléatoire
 	if randf() > 0.5:
 		direction = Vector2.RIGHT
@@ -76,4 +73,4 @@ func move_to_random_floor():
 	# Sélectionner un étage aléatoire et mettre à jour la position Y du personnage
 	var random_floor = floors[randi() % floors.size()]
 	position.y = random_floor
-	print("Moved to floor:", random_floor)
+	#print("Moved to floor:", random_floor)

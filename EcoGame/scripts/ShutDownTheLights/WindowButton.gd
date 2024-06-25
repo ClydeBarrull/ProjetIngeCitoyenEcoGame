@@ -35,5 +35,5 @@ func update_button_color():
 	# Mettre à jour la couleur du bouton en fonction de l'état
 	if current_state == State.ON:
 		self.modulate = Color(10, 10, 5)  # Jaune vif
-	else:
+	if current_state == State.OFF:
 		self.modulate = Color(0, 0, 0)  # Noir
