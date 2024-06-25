@@ -34,11 +34,9 @@ func _process(delta):
 			self.position += move_vector.normalized() * speed * delta
 
 func _on_success():
-	print("yippee")
 	Correct.emit()
 
 func _on_failure():
-	print("bummer :/")
 	Wrong.emit()
 
 func GoUp():

@@ -2,9 +2,9 @@ extends Sprite2D
 
 @export var bin_type : String = "regular"
 var bin_types = {
-	"glass": "res://trash-game/assets/bins/glass_bin.png",
-	"regular": "res://trash-game/assets/bins/common_bin.png",
-	"recyclable": "res://trash-game/assets/bins/recycle_bin.png",
+	"glass": "res://assets/wasteshooter/assets/bins/glass_bin.png",
+	"regular": "res://assets/wasteshooter/assets/bins/common_bin.png",
+	"recyclable": "res://assets/wasteshooter/assets/bins/recycle_bin.png",
 }
 var bin_order = ["regular", "recyclable","glass"]
 

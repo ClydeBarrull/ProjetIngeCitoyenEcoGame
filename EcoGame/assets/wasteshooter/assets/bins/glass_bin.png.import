@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bhpdjwj4hm5nk"
-path="res://.godot/imported/recycle_bin.png-ccdb211aac76690ca3e4fdcec5f6234f.ctex"
+uid="uid://4xaq53f6en3l"
+path="res://.godot/imported/glass_bin.png-19fda43448f36c3723913ddd3c443164.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://trash-game/assets/bins/recycle_bin.png"
-dest_files=["res://.godot/imported/recycle_bin.png-ccdb211aac76690ca3e4fdcec5f6234f.ctex"]
+source_file="res://assets/wasteshooter/assets/bins/glass_bin.png"
+dest_files=["res://.godot/imported/glass_bin.png-19fda43448f36c3723913ddd3c443164.ctex"]
 
 [params]
 

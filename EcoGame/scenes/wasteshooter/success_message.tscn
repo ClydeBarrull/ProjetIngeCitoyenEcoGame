@@ -1,0 +1,53 @@
+[gd_scene load_steps=5 format=3 uid="uid://c162g02tnrmpx"]
+
+[ext_resource type="Script" path="res://scripts/success_message.gd" id="1_28pbf"]
+[ext_resource type="Texture2D" uid="uid://0wf5o0p6dhv7" path="res://assets/WoodPanelSuccess.png" id="2_fgy7b"]
+[ext_resource type="Texture2D" uid="uid://crqlsv67x18pb" path="res://assets/wasteshooter/assets/minigame_preview.png" id="3_47vbt"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_tv752"]
+font_size = 23
+
+[node name="SuccessMessage" type="Node2D"]
+position = Vector2(360, 371)
+scale = Vector2(1.5, 1.5)
+script = ExtResource("1_28pbf")
+
+[node name="WoodenPanel" type="Sprite2D" parent="."]
+texture = ExtResource("2_fgy7b")
+
+[node name="MinigamePreview" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(88, -125)
+scale = Vector2(0.548077, 0.197465)
+texture = ExtResource("3_47vbt")
+
+[node name="MinigameName" type="Label" parent="."]
+offset_left = -182.0
+offset_top = -164.0
+offset_bottom = -128.0
+text = "Fais le tri!
+Déchets
+quotidiens"
+label_settings = SubResource("LabelSettings_tv752")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="MinigameInformations" type="RichTextLabel" parent="."]
+offset_left = -181.0
+offset_top = -58.0
+offset_right = 180.0
+offset_bottom = 185.0
+text = "Le tri des ordures ménagères est essentiel pour protéger l'environnement et promouvoir un mode de vie durable. En triant correctement les déchets, nous réduisons la quantité de déchets envoyés en décharge et augmentons les taux de recyclage, ce qui préserve les ressources naturelles.
+
+Les ordures ménagères classiques, comme les restes alimentaires et les déchets non recyclables, doivent être jetées dans la poubelle grise. Cette catégorie de déchets comprend les produits qui ne peuvent pas être recyclés ou compostés et sont souvent envoyés à l'incinération ou en décharge.
+
+La poubelle jaune est destinée aux plastiques, cartons et conserves. Les plastiques recyclables incluent les bouteilles, les flacons, les emballages et les sacs plastiques. Les cartons et conserves, tels que les boîtes de céréales, les cartons de lait et les boîtes de conserve métalliques, peuvent également être placés dans cette poubelle. En recyclant ces matériaux, nous économisons de l'énergie et des matières premières, tout en réduisant les émissions de gaz à effet de serre.
+
+Le verre doit être jeté dans des conteneurs spécifiques souvent situés à proximité des points de collecte. Les bouteilles, pots et bocaux en verre peuvent être recyclés à l'infini sans perte de qualité. Le recyclage du verre permet de réduire la consommation d'énergie et les émissions de CO2 par rapport à la production de verre neuf à partir de matières premières.
+
+Sources : 
+https://www.ecologie.gouv.fr/politiques-publiques/tri-dechets
+https://www.smitom-nord77.fr/tri-et-collecte/le-tri-pourquoi-et-comment/les-enjeux-du-tri/
+https://fr.wikipedia.org/wiki/Tri_sélectif"
+metadata/_edit_use_anchors_ = true

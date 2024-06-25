@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://xyv5umkwf4ns"
-path="res://.godot/imported/cardboard.png-b7fbd626a6da76c23043076ecb46ba1a.ctex"
+uid="uid://k4eb2t1vwffn"
+path="res://.godot/imported/cardboard.png-37e3dd48765d3e8bf2a66a1d31e62d3b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://trash-game/assets/wastes/cardboard.png"
-dest_files=["res://.godot/imported/cardboard.png-b7fbd626a6da76c23043076ecb46ba1a.ctex"]
+source_file="res://assets/wasteshooter/assets/wastes/cardboard.png"
+dest_files=["res://.godot/imported/cardboard.png-37e3dd48765d3e8bf2a66a1d31e62d3b.ctex"]
 
 [params]
 

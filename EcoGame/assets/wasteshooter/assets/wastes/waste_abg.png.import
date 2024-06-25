@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://6cqt0jvev0oh"
-path="res://.godot/imported/glass_bottle.png-aa3d5accb109f8adf1812f91df250d81.ctex"
+uid="uid://d22hq7kwm1imr"
+path="res://.godot/imported/waste_abg.png-01c8bc5d0bf5ae0cdd8a9048d30377f0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://trash-game/assets/wastes/glass_bottle.png"
-dest_files=["res://.godot/imported/glass_bottle.png-aa3d5accb109f8adf1812f91df250d81.ctex"]
+source_file="res://assets/wasteshooter/assets/wastes/waste_abg.png"
+dest_files=["res://.godot/imported/waste_abg.png-01c8bc5d0bf5ae0cdd8a9048d30377f0.ctex"]
 
 [params]
 

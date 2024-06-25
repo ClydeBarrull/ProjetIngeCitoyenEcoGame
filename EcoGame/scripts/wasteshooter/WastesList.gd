@@ -41,11 +41,9 @@ func _sort_wastes_by_z_index(a, b):
 	return b.z_index - a.z_index
 
 func RegisterSuccess():
-	print("you did it ❁´◡`❁")
 	Success.emit()
 	NextWaste()
 
 func RegisterFailure():
 	Failure.emit()
-	print("oh no :/")
 	NextWaste()
