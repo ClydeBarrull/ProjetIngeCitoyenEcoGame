@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/minigame.gd" id="1_phesm"]
 [ext_resource type="PackedScene" uid="uid://dn3o5arxddhax" path="res://scenes/wasteshooter/trashMinigame_gameplay.tscn" id="2_yxq8p"]
 [ext_resource type="PackedScene" uid="uid://c162g02tnrmpx" path="res://scenes/wasteshooter/success_message.tscn" id="3_qkegn"]
-[ext_resource type="PackedScene" uid="uid://puo5dopegvae" path="res://scenes/failure_message.tscn" id="4_ytirr"]
+[ext_resource type="PackedScene" uid="uid://cqdgnr737f6kr" path="res://scenes/wasteshooter/failure_message.tscn" id="4_rqhms"]
 
 [node name="trash-minigame" type="Node2D"]
 script = ExtResource("1_phesm")
@@ -12,4 +12,4 @@ script = ExtResource("1_phesm")
 
 [node name="SuccessMessage" parent="." instance=ExtResource("3_qkegn")]
 
-[node name="FailureMessage" parent="." instance=ExtResource("4_ytirr")]
+[node name="FailureMessage" parent="." instance=ExtResource("4_rqhms")]

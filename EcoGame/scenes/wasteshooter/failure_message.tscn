@@ -1,0 +1,56 @@
+[gd_scene load_steps=6 format=3 uid="uid://cqdgnr737f6kr"]
+
+[ext_resource type="Script" path="res://scripts/failure_message.gd" id="1_7fxxr"]
+[ext_resource type="Texture2D" uid="uid://riuuhbt8u48e" path="res://assets/WoodPanelFail.png" id="2_r7nvf"]
+[ext_resource type="Texture2D" uid="uid://utbu2rahuxcp" path="res://assets/CancelButton.png" id="3_teokx"]
+[ext_resource type="Texture2D" uid="uid://61rne3h0mauo" path="res://assets/CancelButtonHighlighted.png" id="4_w2gir"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_163df"]
+font_size = 27
+
+[node name="FailureMessage" type="Node2D"]
+position = Vector2(360, 530)
+script = ExtResource("1_7fxxr")
+
+[node name="WoodenPanel" type="Sprite2D" parent="."]
+texture = ExtResource("2_r7nvf")
+
+[node name="MinigameName" type="Label" parent="."]
+offset_left = -198.0
+offset_top = -144.0
+offset_right = 197.0
+offset_bottom = -64.0
+text = "Fais le tri! 
+ Dechets Quotidien"
+label_settings = SubResource("LabelSettings_163df")
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = -168.0
+offset_top = -67.0
+offset_right = 169.0
+offset_bottom = 174.0
+text = "Les ordures ménagères classiques, comme les restes alimentaires et les déchets non recyclables, vont dans la poubelle grise. Ces déchets, non recyclables ou compostables, sont souvent incinérés ou mis en décharge.
+
+La poubelle jaune est pour les plastiques, cartons et conserves. Les plastiques recyclables incluent bouteilles, flacons, emballages et sacs. Les cartons et conserves, comme les boîtes de céréales et les cartons de lait, vont aussi dans cette poubelle. Recycler ces matériaux économise de l'énergie et réduit les émissions de gaz à effet de serre.
+
+Le verre doit être jeté dans des conteneurs spécifiques. Les bouteilles, pots et bocaux en verre peuvent être recyclés indéfiniment sans perte de qualité, réduisant ainsi la consommation d'énergie et les émissions de CO2 par rapport à la production de verre neuf.
+
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="CloseButton" type="TextureButton" parent="."]
+visible = false
+offset_left = 161.0
+offset_top = -228.0
+offset_right = 211.0
+offset_bottom = -178.0
+action_mode = 0
+texture_normal = ExtResource("3_teokx")
+texture_hover = ExtResource("4_w2gir")
+
+[node name="Timeout" type="Timer" parent="."]
+
+[connection signal="pressed" from="CloseButton" to="." method="_on_close_button_pressed"]
+[connection signal="timeout" from="Timeout" to="." method="_on_timeout_timeout"]
