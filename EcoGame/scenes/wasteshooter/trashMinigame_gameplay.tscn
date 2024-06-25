@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dn3o5arxddhax"]
+[gd_scene load_steps=15 format=3 uid="uid://dn3o5arxddhax"]
 
 [ext_resource type="Script" path="res://scripts/wasteshooter/trashMinigame_gameplay.gd" id="1_q68li"]
 [ext_resource type="Script" path="res://scripts/wasteshooter/WastesList.gd" id="2_aeqda"]
@@ -7,8 +7,9 @@
 [ext_resource type="Script" path="res://scripts/wasteshooter/Waste_Area.gd" id="5_f4p52"]
 [ext_resource type="Texture2D" uid="uid://d22hq7kwm1imr" path="res://assets/wasteshooter/assets/wastes/waste_abg.png" id="6_tt8vb"]
 [ext_resource type="Texture2D" uid="uid://c0airuon0n04f" path="res://assets/wasteshooter/assets/wastes/glass_bottle.png" id="7_hp8gu"]
+[ext_resource type="Texture2D" uid="uid://be3ap7ubbf1xw" path="res://assets/wasteshooter/assets/bins/common_bin.png" id="8_prnq3"]
 [ext_resource type="Script" path="res://scripts/wasteshooter/Bins.gd" id="9_71nw5"]
-[ext_resource type="Script" path="res://scripts/wasteshooter/trashbin_collision.gd" id="10_tkxw3"]
+[ext_resource type="Script" path="res://scenes/wasteshooter/BinSelector.gd" id="10_r31jt"]
 [ext_resource type="Script" path="res://scripts/wasteshooter/TouchDetection.gd" id="11_cyb84"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k0lai"]
@@ -80,10 +81,11 @@ shape = SubResource("CapsuleShape2D_k0lai")
 [node name="Bins" type="Sprite2D" parent="."]
 position = Vector2(364, 415.949)
 scale = Vector2(1.04505, 0.72033)
+texture = ExtResource("8_prnq3")
 script = ExtResource("9_71nw5")
 
 [node name="BinSelector" type="Area2D" parent="Bins"]
-script = ExtResource("10_tkxw3")
+script = ExtResource("10_r31jt")
 
 [node name="CollisionWithWaste" type="CollisionShape2D" parent="Bins/BinSelector"]
 position = Vector2(5.74136, -269.944)

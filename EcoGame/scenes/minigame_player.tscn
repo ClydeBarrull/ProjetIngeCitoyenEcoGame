@@ -15,9 +15,9 @@ script = ExtResource("2_hofft")
 [node name="MinigamePack" type="Node" parent="MinigamePack"]
 script = ExtResource("2_hofft")
 
-[node name="Minigame3" parent="MinigamePack/MinigamePack" instance=ExtResource("3_g4dkq")]
-
 [node name="trash-minigame" parent="MinigamePack/MinigamePack" instance=ExtResource("4_i6y7e")]
 script = ExtResource("4_hrnr5")
+
+[node name="Minigame3" parent="MinigamePack/MinigamePack" instance=ExtResource("3_g4dkq")]
 
 [node name="Minigame" parent="MinigamePack" instance=ExtResource("3_g4dkq")]

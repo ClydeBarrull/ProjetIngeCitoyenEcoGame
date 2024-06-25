@@ -17,11 +17,10 @@ func _ready():
 	update_bin_image()
 
 func _on_TouchDetection_input_event(viewport, event, shape_idx):
-	if event is InputEventMouseButton and event.pressed:
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 		change_bin_type()
 
 func change_bin_type():
-	print("touched")
 	var current_index = bin_order.find(bin_type)
 	var next_index = (current_index + 1) % bin_order.size()
 	bin_type = bin_order[next_index]
