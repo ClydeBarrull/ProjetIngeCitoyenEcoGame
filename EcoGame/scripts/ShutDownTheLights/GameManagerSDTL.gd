@@ -28,7 +28,7 @@ func _ready():
 	update_characters_visibility()
 	
 	# Initialiser le timer
-	InitializeTimer()
+	InitializeTimerAndVeil()
 	
 	# Initialiser le timer pour vérifier le statut du jeu après 10 secondes
 	check_timer = Timer.new()
