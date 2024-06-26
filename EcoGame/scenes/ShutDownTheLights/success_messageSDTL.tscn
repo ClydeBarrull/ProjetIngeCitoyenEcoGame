@@ -1,0 +1,51 @@
+[gd_scene load_steps=5 format=3 uid="uid://cf3n7cd2dsmwr"]
+
+[ext_resource type="Script" path="res://scripts/success_message.gd" id="1_sjo5k"]
+[ext_resource type="Texture2D" uid="uid://0wf5o0p6dhv7" path="res://assets/WoodPanelSuccess.png" id="2_jqcoi"]
+[ext_resource type="Texture2D" uid="uid://b3v7ybl5uhkf4" path="res://assets/ShutDownTheLights/Capture d'écran 2024-06-25 233411.png" id="3_r3d4q"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_tv752"]
+font_size = 23
+
+[node name="SuccessMessage" type="Node2D"]
+position = Vector2(360, 371)
+scale = Vector2(1.5, 1.5)
+script = ExtResource("1_sjo5k")
+
+[node name="WoodenPanel" type="Sprite2D" parent="."]
+texture = ExtResource("2_jqcoi")
+
+[node name="MinigamePreview" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(88, -125)
+scale = Vector2(0.548077, 0.197465)
+texture = ExtResource("3_r3d4q")
+
+[node name="MinigameName" type="Label" parent="."]
+offset_left = -193.333
+offset_top = -168.0
+offset_right = 9.66667
+offset_bottom = -132.0
+text = "éteint les lumières"
+label_settings = SubResource("LabelSettings_tv752")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="MinigameInformations" type="RichTextLabel" parent="."]
+offset_left = -181.0
+offset_top = -58.0
+offset_right = 180.0
+offset_bottom = 185.0
+text = "Bravo ! Vous avez réussi à éteindre les lumières de manière efficace et intelligente. En jouant à ce mini-jeu, vous avez compris l'importance de gérer l'éclairage dans votre maison. Voici les principaux enseignements et bénéfices de cette victoire :
+
+Économie d'énergie : En éteignant les lumières inutiles, vous contribuez à réduire la consommation d'énergie. Cela aide non seulement à économiser sur vos factures d'électricité, mais aussi à préserver les ressources naturelles de notre planète.
+
+Impact environnemental : Moins d'énergie consommée signifie une empreinte carbone réduite. En éteignant les lumières lorsque vous quittez une pièce, vous participez activement à la lutte contre le changement climatique.
+
+Confort visuel : Vous avez appris à équilibrer l'éclairage dans votre maison. Vivre dans un environnement bien éclairé sans pour autant être ébloui améliore le confort et la qualité de vie.
+
+Sécurité : En s'assurant que certaines lumières restent allumées dans les zones stratégiques, comme les couloirs ou les escaliers, vous maintenez un niveau de sécurité tout en économisant de l'énergie.
+
+En éteignant les lumières intelligemment, vous montrez qu'il est possible de vivre de manière écologique sans pour autant vivre dans le noir. Continuez à appliquer ces bonnes pratiques au quotidien pour un avenir plus durable !"
+metadata/_edit_use_anchors_ = true
