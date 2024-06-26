@@ -9,7 +9,10 @@
 script = ExtResource("1_phesm")
 
 [node name="trashgameplay" parent="." instance=ExtResource("2_yxq8p")]
+TimeLimit = 12
+WrongsThreshold = 3
 
 [node name="SuccessMessage" parent="." instance=ExtResource("3_qkegn")]
 
 [node name="FailureMessage" parent="." instance=ExtResource("4_rqhms")]
+z_index = 90

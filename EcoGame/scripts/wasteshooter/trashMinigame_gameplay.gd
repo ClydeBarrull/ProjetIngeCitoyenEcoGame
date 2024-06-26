@@ -4,7 +4,7 @@ class_name TrashGameplay
 
 var SwipeableWasteList : WastesList
 var isMoving : bool = false
-@export var numWaste : int = 3
+@export var numWaste : int = 4
 
 func _ready():
 	print("TrashGameplay ready")
