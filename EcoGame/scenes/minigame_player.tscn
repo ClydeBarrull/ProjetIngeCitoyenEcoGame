@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/MinigamePlayer.gd" id="1_obxeq"]
 [ext_resource type="Script" path="res://scripts/MinigamePack.gd" id="2_hofft"]
-[ext_resource type="PackedScene" uid="uid://do235c1ga6pv6" path="res://scenes/minigame.tscn" id="3_g4dkq"]
+[ext_resource type="PackedScene" uid="uid://br1ceww3vrpp" path="res://scenes/minigame.tscn" id="3_g4dkq"]
 [ext_resource type="PackedScene" uid="uid://doqhgr8wo6ygx" path="res://scenes/ShutDownTheLights/SDTLGame.tscn" id="4_4xey6"]
 
 [node name="MinigamePlayer" type="Node"]

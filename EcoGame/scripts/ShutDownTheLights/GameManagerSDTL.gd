@@ -82,13 +82,6 @@ func update_characters_visibility():
 		
 		if character_sprite.visible:
 			new_visible_count += 1
-	
-	if new_visible_count != visible_character_count:
-		if new_visible_count < 3 and visible_character_count >= 3:
-			CorrectRegistered(1)
-		elif new_visible_count >= 3 and visible_character_count < 3:
-			WrongRegistered(1)
-		visible_character_count = new_visible_count
 
 func _check_game_status():
 	if visible_character_count < 3:

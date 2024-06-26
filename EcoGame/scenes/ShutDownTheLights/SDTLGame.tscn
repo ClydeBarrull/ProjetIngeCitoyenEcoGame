@@ -11,9 +11,7 @@ script = ExtResource("1_0mbty")
 [node name="LightsMiniGame" parent="." instance=ExtResource("1_cslhk")]
 
 [node name="SuccessMessage" parent="." instance=ExtResource("2_b1hym")]
-visible = false
 z_index = 2
 
 [node name="FailureMessage" parent="." instance=ExtResource("3_i4ba0")]
-visible = false
 z_index = 2
