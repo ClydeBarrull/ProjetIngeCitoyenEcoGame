@@ -1,0 +1,61 @@
+[gd_scene load_steps=6 format=3 uid="uid://bdpbiy560s455"]
+
+[ext_resource type="Script" path="res://scripts/failure_message.gd" id="1_4vojk"]
+[ext_resource type="Texture2D" uid="uid://riuuhbt8u48e" path="res://assets/WoodPanelFail.png" id="2_nqiyo"]
+[ext_resource type="Texture2D" uid="uid://utbu2rahuxcp" path="res://assets/CancelButton.png" id="3_rt1ks"]
+[ext_resource type="Texture2D" uid="uid://61rne3h0mauo" path="res://assets/CancelButtonHighlighted.png" id="4_tvama"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_163df"]
+font_size = 27
+
+[node name="FailureMessage" type="Node2D"]
+position = Vector2(360, 530)
+script = ExtResource("1_4vojk")
+
+[node name="WoodenPanel" type="Sprite2D" parent="."]
+texture = ExtResource("2_nqiyo")
+
+[node name="MinigameName" type="Label" parent="."]
+offset_left = -114.0
+offset_top = -128.0
+offset_right = 113.0
+offset_bottom = -86.0
+text = "éteint les lumières"
+label_settings = SubResource("LabelSettings_163df")
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = -168.0
+offset_top = -67.0
+offset_right = 169.0
+offset_bottom = 174.0
+text = "Oups ! Il semble que vous avez rencontré quelques difficultés à éteindre les lumières de manière efficace. Pas de panique ! Voici pourquoi il est crucial de gérer l'éclairage de votre maison et quelques conseils pour vous améliorer :
+
+Éviter le gaspillage d'énergie : Laisser les lumières allumées inutilement consomme beaucoup d'énergie, ce qui se traduit par des factures d'électricité plus élevées. En éteignant les lumières lorsque vous quittez une pièce, vous pouvez réaliser des économies significatives.
+
+Réduire l'empreinte carbone : Chaque kilowattheure d'électricité produit peut libérer une quantité importante de dioxyde de carbone dans l'atmosphère. En éteignant les lumières inutiles, vous contribuez à la réduction des émissions de gaz à effet de serre.
+
+Confort et bien-être : Un éclairage excessif peut être inconfortable et fatigant pour les yeux. Il est important de trouver un équilibre entre un éclairage suffisant pour vos activités et éviter les zones trop lumineuses.
+
+Sécurité et confort visuel : Bien qu'il soit important d'éteindre les lumières inutiles, il est également crucial de ne pas vivre dans le noir. Assurez-vous que les zones clés de votre maison, comme les couloirs et les escaliers, sont suffisamment éclairées pour éviter les accidents.
+
+Pour réussir ce mini-jeu et dans la vie réelle, essayez de vous rappeler d'éteindre les lumières lorsque vous quittez une pièce et d'utiliser des éclairages adaptés à chaque activité. Avec un peu de pratique, vous réussirez à trouver le bon équilibre entre économie d'énergie et confort !
+
+En réessayant, vous pourrez améliorer votre gestion de l'éclairage et contribuer à un mode de vie plus durable. Bonne chance pour la prochaine fois !"
+metadata/_edit_use_anchors_ = true
+
+[node name="CloseButton" type="TextureButton" parent="."]
+visible = false
+offset_left = 161.0
+offset_top = -228.0
+offset_right = 211.0
+offset_bottom = -178.0
+action_mode = 0
+texture_normal = ExtResource("3_rt1ks")
+texture_hover = ExtResource("4_tvama")
+
+[node name="Timeout" type="Timer" parent="."]
+
+[connection signal="pressed" from="CloseButton" to="." method="_on_close_button_pressed"]
+[connection signal="timeout" from="Timeout" to="." method="_on_timeout_timeout"]

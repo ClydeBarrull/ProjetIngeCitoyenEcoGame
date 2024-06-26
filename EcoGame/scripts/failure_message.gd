@@ -7,7 +7,7 @@ signal Closed
 @onready var closeButton : TextureButton = $CloseButton
 @onready var timer : Timer = $Timeout
 
-@export var Timeout : float = 10
+@export var Timeout : float = 2
 
 var locked : bool = true
 
