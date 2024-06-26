@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bhq5mnwlvp8ru"]
+[gd_scene load_steps=6 format=3 uid="uid://bhq5mnwlvp8ru"]
 
 [ext_resource type="Script" path="res://scripts/MinigamePlayer.gd" id="1_obxeq"]
 [ext_resource type="Script" path="res://scripts/MinigamePack.gd" id="2_hofft"]
-[ext_resource type="PackedScene" uid="uid://br1ceww3vrpp" path="res://scenes/minigame.tscn" id="3_g4dkq"]
-[ext_resource type="PackedScene" uid="uid://doqhgr8wo6ygx" path="res://scenes/ShutDownTheLights/SDTLGame.tscn" id="4_4xey6"]
+[ext_resource type="PackedScene" uid="uid://do235c1ga6pv6" path="res://scenes/minigame.tscn" id="4_drrjh"]
+[ext_resource type="PackedScene" uid="uid://bvomp8b1nxb17" path="res://scenes/leaf_curtain.tscn" id="4_ktbch"]
+[ext_resource type="PackedScene" uid="uid://d0y7c8of4d6j1" path="res://scenes/SwipeMinigame/swipe_minigame.tscn" id="4_qy11b"]
 
 [node name="MinigamePlayer" type="Node"]
 script = ExtResource("1_obxeq")
@@ -11,11 +12,12 @@ script = ExtResource("1_obxeq")
 [node name="MinigamePack" type="Node" parent="."]
 script = ExtResource("2_hofft")
 
-[node name="MinigamePack" type="Node" parent="MinigamePack"]
-script = ExtResource("2_hofft")
+[node name="SwipeMinigame" parent="MinigamePack" instance=ExtResource("4_qy11b")]
 
-[node name="Minigame" parent="MinigamePack/MinigamePack" instance=ExtResource("3_g4dkq")]
+[node name="Minigame" parent="MinigamePack" instance=ExtResource("4_qy11b")]
 
-[node name="Minigame2" parent="MinigamePack/MinigamePack" instance=ExtResource("3_g4dkq")]
+[node name="Minigame2" parent="MinigamePack" instance=ExtResource("4_drrjh")]
 
-[node name="SdtlGame" parent="MinigamePack" instance=ExtResource("4_4xey6")]
+[node name="LeafCurtain" parent="." instance=ExtResource("4_ktbch")]
+visibility_layer = 5
+z_index = 200

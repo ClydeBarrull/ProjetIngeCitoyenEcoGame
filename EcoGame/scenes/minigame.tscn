@@ -12,4 +12,7 @@ script = ExtResource("1_82thc")
 
 [node name="SuccessMessage" parent="." instance=ExtResource("3_xk7jg")]
 
+z_index = 99
+
 [node name="FailureMessage" parent="." instance=ExtResource("4_tfyte")]
+z_index = 99

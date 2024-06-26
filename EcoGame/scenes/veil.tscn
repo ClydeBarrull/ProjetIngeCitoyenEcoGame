@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://dp6mg63scqapn"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_kqchk"]
+
+[node name="Veil" type="Sprite2D"]
+visible = false
+modulate = Color(0, 0, 0, 0.607843)
+visibility_layer = 2
+z_index = 50
+position = Vector2(360, 540)
+scale = Vector2(720, 1080)
+texture = SubResource("PlaceholderTexture2D_kqchk")

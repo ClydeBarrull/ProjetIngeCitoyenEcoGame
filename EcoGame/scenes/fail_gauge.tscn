@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://dsbpu47u2oyp4"]
+
+[ext_resource type="Script" path="res://scripts/fail_gauge.gd" id="1_y123w"]
+[ext_resource type="Script" path="res://scripts/Failable.gd" id="2_jpdjo"]
+[ext_resource type="Texture2D" uid="uid://810u4oquy1y1" path="res://assets/canBeFailed.png" id="2_n2kb0"]
+[ext_resource type="Texture2D" uid="uid://c30tsj04ucijh" path="res://assets/isFailed.png" id="3_ywf0l"]
+
+[node name="FailGauge" type="Node2D"]
+position = Vector2(365, 533)
+script = ExtResource("1_y123w")
+
+[node name="Failable" type="Node2D" parent="."]
+script = ExtResource("2_jpdjo")
+
+[node name="CanBeFailed" type="Sprite2D" parent="Failable"]
+texture = ExtResource("2_n2kb0")
+
+[node name="IsFailed" type="Sprite2D" parent="Failable"]
+visible = false
+texture = ExtResource("3_ywf0l")
