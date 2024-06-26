@@ -10,7 +10,8 @@ script = ExtResource("1_phesm")
 
 [node name="trashgameplay" parent="." instance=ExtResource("2_yxq8p")]
 TimeLimit = 12
-WrongsThreshold = 3
+WrongsThreshold = 2
+CorrectsThresholds = 4
 
 [node name="SuccessMessage" parent="." instance=ExtResource("3_qkegn")]
 

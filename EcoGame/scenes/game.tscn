@@ -1,9 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://f2s7run870rq"]
+[gd_scene load_steps=4 format=3 uid="uid://f2s7run870rq"]
 
 [ext_resource type="Script" path="res://scripts/Game.gd" id="1_jsndf"]
 [ext_resource type="PackedScene" uid="uid://bhq5mnwlvp8ru" path="res://scenes/minigame_player.tscn" id="2_8jvgw"]
+[ext_resource type="Texture2D" uid="uid://63i8sgsp41vw" path="res://assets/ColorBackground.png" id="3_70s12"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_jsndf")
 
 [node name="MinigamePlayer" parent="." instance=ExtResource("2_8jvgw")]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -5
+z_as_relative = false
+position = Vector2(357, 542)
+texture = ExtResource("3_70s12")

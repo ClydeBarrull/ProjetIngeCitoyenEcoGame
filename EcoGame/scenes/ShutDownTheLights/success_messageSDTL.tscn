@@ -17,16 +17,17 @@ texture = ExtResource("2_jqcoi")
 
 [node name="MinigamePreview" type="Sprite2D" parent="."]
 z_index = -1
-position = Vector2(88, -125)
-scale = Vector2(0.548077, 0.197465)
+position = Vector2(87.3333, -126.667)
+scale = Vector2(0.386241, 0.139157)
 texture = ExtResource("3_r3d4q")
 
 [node name="MinigameName" type="Label" parent="."]
 offset_left = -193.333
-offset_top = -168.0
-offset_right = 9.66667
-offset_bottom = -132.0
-text = "éteint les lumières"
+offset_top = -152.0
+offset_right = 9.66666
+offset_bottom = -82.0
+text = "Éteins les
+lumières !"
 label_settings = SubResource("LabelSettings_tv752")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -37,7 +38,7 @@ offset_left = -181.0
 offset_top = -58.0
 offset_right = 180.0
 offset_bottom = 185.0
-text = "Bravo ! Vous avez réussi à éteindre les lumières de manière efficace et intelligente. En jouant à ce mini-jeu, vous avez compris l'importance de gérer l'éclairage dans votre maison. Voici les principaux enseignements et bénéfices de cette victoire :
+text = "Voici les principaux enseignements et bénéfices de ces bonnes actions à la maison :
 
 Économie d'énergie : En éteignant les lumières inutiles, vous contribuez à réduire la consommation d'énergie. Cela aide non seulement à économiser sur vos factures d'électricité, mais aussi à préserver les ressources naturelles de notre planète.
 
