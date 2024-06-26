@@ -8,6 +8,9 @@ var visible_character_count = 0
 
 var check_timer : Timer
 
+# Liste des positions Y des différents étages
+var floors = [0, -160, -310, -440, -600]
+
 func _ready():
 	# Récupérer tous les boutons à partir du chemin spécifié
 	var buttons_parent = get_node("Building/Node2D")
@@ -48,34 +51,47 @@ func _on_character_moved(character):
 	print("Character moved: ", character.name, " Position: ", character.position)
 	update_characters_visibility()
 
+func get_floor_index(position_y):
+	for i in range(floors.size()):
+		if position_y == floors[i]:
+			return i
+	return -1
+
 func update_characters_visibility():
 	var new_visible_count = 0
 	
 	for character in characters:
 		var character_sprite = character.get_node("Sprite2D/Sprite2D")
 		var character_in_window = false
+		var floor_index = get_floor_index(character.position.y)
+		if floor_index == -1:
+			continue # Ignore characters not on a known floor
+		
+		# Déterminer les boutons pour l'étage actuel du personnage
+		var left_button = window_buttons[floor_index * 2]
+		var right_button = window_buttons[floor_index * 2 + 1]
 
-		for button in window_buttons:
-			if abs(character.position.y + button.position.y) < 50:
-				character_in_window = true
-				if character.position.x <= -5:
-					# Bouton de gauche
-					print("Character ", character.name, " on left button ", button.name)
-					if button.current_state == WindowButton.State.OFF:
-						character_sprite.visible = true
-					else:
-						character_sprite.visible = false
-				elif character.position.x >= 5:
-					# Bouton de droite
-					print("Character ", character.name, " on right button ", button.name)
-					if button.current_state == WindowButton.State.OFF:
-						character_sprite.visible = true
-					else:
-						character_sprite.visible = false
+		# Vérifier la position y du personnage par rapport aux boutons
+		if abs(character.position.y - floors[floor_index]) < 50:
+			character_in_window = true
+			if character.position.x <= -5:
+				# Bouton de gauche
+				print("Character ", character.name, " on left button ", left_button.name)
+				if left_button.current_state == WindowButton.State.OFF:
+					character_sprite.visible = true
 				else:
-					# Entre les deux boutons, considéré comme valide par défaut
-					print("Character ", character.name, " between buttons")
 					character_sprite.visible = false
+			elif character.position.x >= 5:
+				# Bouton de droite
+				print("Character ", character.name, " on right button ", right_button.name)
+				if right_button.current_state == WindowButton.State.OFF:
+					character_sprite.visible = true
+				else:
+					character_sprite.visible = false
+			else:
+				# Entre les deux boutons, considéré comme valide par défaut
+				print("Character ", character.name, " between buttons")
+				character_sprite.visible = false
 
 		if not character_in_window:
 			character_sprite.visible = false
