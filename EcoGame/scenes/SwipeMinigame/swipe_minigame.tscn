@@ -9,6 +9,7 @@
 script = ExtResource("1_4i122")
 
 [node name="SwipeGameplay" parent="." instance=ExtResource("2_0nnkn")]
+TimeLimit = 12
 
 [node name="SuccessMessage" parent="." instance=ExtResource("3_hamir")]
 
