@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://cxxf3m62xlxci"]
+
+[ext_resource type="PackedScene" uid="uid://dbc82t5m02cor" path="res://scenes/success_message.tscn" id="1_j4vnx"]
+[ext_resource type="Texture2D" uid="uid://cfuf6motw1yu2" path="res://assets/SwipeMinigame/SwipeTransportsPreview.png" id="2_vvtyw"]
+
+[node name="SuccessMessage" instance=ExtResource("1_j4vnx")]
+
+[node name="MinigamePreview" parent="." index="1"]
+position = Vector2(91.3333, -129.333)
+scale = Vector2(0.357724, 0.215948)
+texture = ExtResource("2_vvtyw")
+
+[node name="MinigameName" parent="." index="2"]
+text = "Swipe!
+Transports
+Citadins"
+
+[node name="MinigameInformations" parent="." index="3"]
+text = "Le choix de prendre les transports en commmuns ou véhicules dépendants d'énergie renouvelable représente plusieurs bénéfices. En réduisant les émissions de gaz à effet de serre et les particules fines, ils contribuent à améliorer la qualité de l'air, ce qui est crucial pour la santé publique. Les véhicules électriques, les vélos et les transports en commun alimentés par des sources d'énergie renouvelable permettent de diminuer la dépendance aux combustibles fossiles et de réduire la pollution sonore. De plus, ces modes de transport favorisent une mobilité plus durable et inclusive, en rendant les déplacements accessibles à un plus grand nombre de personnes tout en réduisant les embouteillages. L'adoption de solutions de transport non polluantes aide aussi à dynamiser l'économie locale, en créant des emplois dans les secteurs des énergies renouvelables et des infrastructures vertes. Il existe plusieurs solutions partielles comme les voitures hybrides qui utilisent majoritairement de l'électricité sur des trajets de court à moyenne distance.
+
+Sources :
+https://www.notre-environnement.gouv.fr/themes/climat/les-emissions-de-gaz-a-effet-de-serre-et-l-empreinte-carbone-ressources/article/les-emissions-de-gaz-a-effet-de-serre-du-secteur-des-transports
+https://les-petits-calculs-savants.fr/2018/06/22/12-citadin-je-passe-aux-transports-en-commun/
+https://fr.wikipedia.org/wiki/Impact_environnemental_du_transport_routier
+https://blog.hcigroupe.com/impacts-des-transports-en-commun-sur-lenvironnement"

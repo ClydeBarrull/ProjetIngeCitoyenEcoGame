@@ -34,6 +34,5 @@ func MinigameFailed():
 	Failure.ShowMessage();
 
 func End():
-	print("done !")
 	MinigameCompleted.emit()
 	

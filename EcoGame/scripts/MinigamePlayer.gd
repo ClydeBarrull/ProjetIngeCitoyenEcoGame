@@ -6,6 +6,8 @@ signal LeaveToMainMenu
 
 const READERSCENEFILEPATH = "res://scenes/success_messages_reader.tscn"
 
+@onready var leafCurtain : LeafCurtain = $LeafCurtain
+
 var reader : SuccessMessageReader
 
 var playlist : Array = []
@@ -16,7 +18,7 @@ var	currentMinigameIndex : int
 
 # TEMP FOR STANDALONE LAUNCH
 func _ready():
-	print("MinigamePlayer ready")
+	leafCurtain.Hiding.connect(Next)
 	LoadMinigamePack(self.get_child(0))
 	StartPlaying()
 
@@ -26,29 +28,31 @@ func LoadMinigamePack(pack:MinigamePack):
 	
 func LoadMinigame(name:String):
 	currentMinigame = Utilities.CreateInstance(name,self)
-	currentMinigame.MinigameCompleted.connect(Next)
+	endMessages.append(currentMinigame.Success.scene_file_path)
+	currentMinigame.MinigameCompleted.connect(EndOrTransition)
 	currentMinigame.Play()
 	
 func StartPlaying():
 	currentMinigameIndex = 0
 	LoadMinigame(playlist[currentMinigameIndex])
 
+func EndOrTransition():
+	if (playlist.size() > currentMinigameIndex + 1):
+		leafCurtain.play()
+	else :
+		GameOver()
+
 func Next():
 	currentMinigameIndex += 1
 	
 	if (currentMinigameIndex != 0):
-		endMessages.append(currentMinigame.Success.scene_file_path)
-		currentMinigame.MinigameCompleted.disconnect(Next)
+		currentMinigame.MinigameCompleted.disconnect(EndOrTransition)
 		currentMinigame.queue_free()
 	
-	if (playlist.size() > currentMinigameIndex):
-		LoadMinigame(playlist[currentMinigameIndex])
-	else :
-		GameOver()
+	LoadMinigame(playlist[currentMinigameIndex])
 	
 func GameOver():
 	currentMinigame.queue_free()
-	print("Game over ! time to read !")
 	reader = Utilities.CreateInstance(READERSCENEFILEPATH,self,[endMessages])
 	reader.DoneReading.connect(CloseReader)
 	
