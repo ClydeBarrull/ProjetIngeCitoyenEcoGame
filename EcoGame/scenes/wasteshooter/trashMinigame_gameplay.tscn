@@ -1,0 +1,122 @@
+[gd_scene load_steps=17 format=3 uid="uid://dn3o5arxddhax"]
+
+[ext_resource type="Script" path="res://scripts/wasteshooter/trashMinigame_gameplay.gd" id="1_q68li"]
+[ext_resource type="Script" path="res://scripts/wasteshooter/WastesList.gd" id="2_aeqda"]
+[ext_resource type="Texture2D" uid="uid://bfi686g2w2cv3" path="res://assets/wasteshooter/assets/wastes/plastic_bottle.png" id="3_3txks"]
+[ext_resource type="Script" path="res://scripts/wasteshooter/Wastes.gd" id="4_uobp7"]
+[ext_resource type="Script" path="res://scripts/wasteshooter/Waste_Area.gd" id="5_f4p52"]
+[ext_resource type="Texture2D" uid="uid://d22hq7kwm1imr" path="res://assets/wasteshooter/assets/wastes/waste_abg.png" id="6_tt8vb"]
+[ext_resource type="Texture2D" uid="uid://c0airuon0n04f" path="res://assets/wasteshooter/assets/wastes/glass_bottle.png" id="7_hp8gu"]
+[ext_resource type="Texture2D" uid="uid://k4eb2t1vwffn" path="res://assets/wasteshooter/assets/wastes/cardboard.png" id="8_om6aq"]
+[ext_resource type="Texture2D" uid="uid://be3ap7ubbf1xw" path="res://assets/wasteshooter/assets/bins/common_bin.png" id="8_prnq3"]
+[ext_resource type="Script" path="res://scripts/wasteshooter/Bins.gd" id="9_71nw5"]
+[ext_resource type="Script" path="res://scenes/wasteshooter/BinSelector.gd" id="10_r31jt"]
+[ext_resource type="Script" path="res://scripts/wasteshooter/TouchDetection.gd" id="11_cyb84"]
+[ext_resource type="PackedScene" uid="uid://cks8xhba2cqg3" path="res://scenes/vibrating_text.tscn" id="12_kdp11"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k0lai"]
+radius = 12.4278
+height = 56.1867
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pfwe8"]
+size = Vector2(260.276, 265.156)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xolwu"]
+size = Vector2(338.74, 824.622)
+
+[node name="trashgameplay" type="Node2D"]
+script = ExtResource("1_q68li")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="WastesList" type="Node" parent="."]
+script = ExtResource("2_aeqda")
+
+[node name="Waste2" type="Sprite2D" parent="WastesList"]
+visible = false
+position = Vector2(376, 878)
+scale = Vector2(3.75567, 3.75567)
+texture = ExtResource("3_3txks")
+script = ExtResource("4_uobp7")
+speed = 1500
+
+[node name="Waste" type="Area2D" parent="WastesList/Waste2"]
+position = Vector2(0.0866394, 1.46194)
+script = ExtResource("5_f4p52")
+tri = "recyclable"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WastesList/Waste2/Waste"]
+shape = SubResource("CapsuleShape2D_k0lai")
+
+[node name="Waste1" type="Sprite2D" parent="WastesList"]
+visible = false
+position = Vector2(378, 874)
+scale = Vector2(0.378698, 0.378698)
+texture = ExtResource("6_tt8vb")
+script = ExtResource("4_uobp7")
+speed = 1500
+
+[node name="Waste" type="Area2D" parent="WastesList/Waste1"]
+position = Vector2(-5.28125, 29.0466)
+script = ExtResource("5_f4p52")
+tri = "regular"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WastesList/Waste1/Waste"]
+shape = SubResource("CapsuleShape2D_k0lai")
+
+[node name="Waste3" type="Sprite2D" parent="WastesList"]
+visible = false
+position = Vector2(376, 878)
+scale = Vector2(3.75567, 3.75567)
+texture = ExtResource("7_hp8gu")
+script = ExtResource("4_uobp7")
+speed = 1500
+
+[node name="Waste" type="Area2D" parent="WastesList/Waste3"]
+position = Vector2(0.0866394, 1.46194)
+script = ExtResource("5_f4p52")
+tri = "glass"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WastesList/Waste3/Waste"]
+shape = SubResource("CapsuleShape2D_k0lai")
+
+[node name="Waste4" type="Sprite2D" parent="WastesList"]
+visible = false
+position = Vector2(376, 878)
+scale = Vector2(3.75567, 3.75567)
+texture = ExtResource("8_om6aq")
+script = ExtResource("4_uobp7")
+speed = 1500
+
+[node name="Waste" type="Area2D" parent="WastesList/Waste4"]
+position = Vector2(0.0866394, 1.46194)
+script = ExtResource("5_f4p52")
+tri = "recyclable"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WastesList/Waste4/Waste"]
+shape = SubResource("CapsuleShape2D_k0lai")
+
+[node name="Bins" type="Sprite2D" parent="."]
+position = Vector2(364, 415.949)
+scale = Vector2(1.04505, 0.72033)
+texture = ExtResource("8_prnq3")
+script = ExtResource("9_71nw5")
+
+[node name="BinSelector" type="Area2D" parent="Bins"]
+script = ExtResource("10_r31jt")
+
+[node name="CollisionWithWaste" type="CollisionShape2D" parent="Bins/BinSelector"]
+position = Vector2(5.74136, -269.944)
+shape = SubResource("RectangleShape2D_pfwe8")
+
+[node name="TouchDetection" type="Area2D" parent="Bins"]
+script = ExtResource("11_cyb84")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bins/TouchDetection"]
+position = Vector2(5.74133, 0.0707092)
+shape = SubResource("RectangleShape2D_xolwu")
+
+[node name="VibratingText" parent="." instance=ExtResource("12_kdp11")]
+position = Vector2(304, 51)
+Text = "Fais le tri !!"
+Shake = 200

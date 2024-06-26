@@ -1,23 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://dttkxfdhx65gk"]
+[gd_scene load_steps=4 format=3 uid="uid://cks8xhba2cqg3"]
 
-[ext_resource type="Script" path="res://scripts/vibrating_text.gd" id="1_afboq"]
+[ext_resource type="Script" path="res://scripts/vibrating_text.gd" id="1_6wieh"]
 
-[sub_resource type="SystemFont" id="SystemFont_3nvjk"]
-font_names = PackedStringArray("Zelda Oracles")
+[sub_resource type="SystemFont" id="SystemFont_vn785"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_scfv6"]
-font = SubResource("SystemFont_3nvjk")
+[sub_resource type="LabelSettings" id="LabelSettings_xft45"]
+font = SubResource("SystemFont_vn785")
 font_size = 41
-font_color = Color(0.729412, 0.729412, 0.729412, 1)
+font_color = Color(0.647059, 0.647059, 0.647059, 1)
 
 [node name="VibratingText" type="Node2D"]
-script = ExtResource("1_afboq")
+script = ExtResource("1_6wieh")
 
 [node name="Text" type="Label" parent="."]
-offset_left = -55.0
-offset_top = -23.0
-offset_right = 57.0
-offset_bottom = 27.0
-text = "
-"
-label_settings = SubResource("LabelSettings_scfv6")
+offset_right = 40.0
+offset_bottom = 23.0
+label_settings = SubResource("LabelSettings_xft45")
