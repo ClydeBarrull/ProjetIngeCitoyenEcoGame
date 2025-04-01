@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://c8qb206sha8ct" path="res://assets/SwipeMinigame/SwipeMinigameVoitureElectrique.png" id="7_hxlky"]
 [ext_resource type="Texture2D" uid="uid://cpw5k8c8po287" path="res://assets/SwipeMinigame/SwipeMinigameVoitureEssence.png" id="8_0bcx6"]
 [ext_resource type="Texture2D" uid="uid://dswjno77uc4ai" path="res://assets/SwipeMinigame/SwipeMinigameTaxi.png" id="8_q3feu"]
-[ext_resource type="PackedScene" path="res://scenes/fail_gauge.tscn" id="9_whccl"]
+[ext_resource type="PackedScene" uid="uid://dsbpu47u2oyp4" path="res://scenes/fail_gauge.tscn" id="9_whccl"]
 [ext_resource type="PackedScene" uid="uid://cq0i5dabdt1ig" path="res://scenes/vibrating_text.tscn" id="13_hlgdq"]
 
 [node name="SwipeGameplay" type="Node2D"]

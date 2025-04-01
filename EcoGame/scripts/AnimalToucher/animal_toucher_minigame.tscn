@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://cdr27qc7340ai"]
+
+[ext_resource type="Script" path="res://scripts/minigame.gd" id="1_w758r"]
+[ext_resource type="PackedScene" uid="uid://br8e6jh7gqnfp" path="res://scripts/AnimalToucher/minigame_gameplay.tscn" id="2_dac6a"]
+[ext_resource type="PackedScene" uid="uid://puo5dopegvae" path="res://scenes/failure_message.tscn" id="2_s54bl"]
+[ext_resource type="PackedScene" uid="uid://duxfgld23gcto" path="res://scenes/AnimalToucher/animal_toucher_success_message.tscn" id="3_ouq3b"]
+
+[node name="animal-toucher-minigame" type="Node"]
+script = ExtResource("1_w758r")
+
+[node name="animal-toucher-gameplay" parent="." instance=ExtResource("2_dac6a")]
+
+[node name="SuccessMessage" parent="." instance=ExtResource("3_ouq3b")]
+
+[node name="FailureMessage" parent="." instance=ExtResource("2_s54bl")]
+z_index = 99
+
+[node name="MinigameName" parent="FailureMessage" index="1"]
+offset_left = -174.0
+offset_right = 175.0
+text = "Tap or ignore ! Toucher les animaux"
+
+[node name="RichTextLabel" parent="FailureMessage" index="2"]
+offset_top = -74.0
+offset_bottom = 167.0
+text = "Animals are highly susceptible to diseases from human hands. They can die from bacteria transferred from your hands that has no ill effect on you.  They can react badly to your perfume, shower gel and even worse BUG SPRAY. Insect repellent is toxic to many animals and you can end up killing them. Frogs, dolphins, whales, starfish and reptiles are particularly susceptible to human bacteria passed from your hands. 
+Feeding wild animals creates a  dependency on humans that diminishes the animals natural, survival abilities. In short, it’s dangerous for the animal because they can end up starving.
+Feeding interferes and upsets the balance of the food chain which, for birds, is often centred on eating wild fruits, seeds, small animals and insects.
+
+https://journeyofanomadicfamily.com/19-reasons-not-feed-touch-wild-animals/"
+
+[editable path="FailureMessage"]

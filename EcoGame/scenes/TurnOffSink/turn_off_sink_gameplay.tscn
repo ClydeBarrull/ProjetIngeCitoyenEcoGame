@@ -1,0 +1,102 @@
+[gd_scene load_steps=15 format=3 uid="uid://bgtlgmd0npijg"]
+
+[ext_resource type="Script" path="res://scripts/TurnOffSink/turn_off_sink.gd" id="1_7mlj8"]
+[ext_resource type="Texture2D" uid="uid://bq323fkqgj077" path="res://assets/TurnOffSink/sink_wallpaper.png" id="2_4jodq"]
+[ext_resource type="Script" path="res://scenes/TurnOffSink/sink.gd" id="3_20tuf"]
+[ext_resource type="Texture2D" uid="uid://dbmtrvpotcsuo" path="res://assets/TurnOffSink/robinet.png" id="4_qmsd8"]
+[ext_resource type="Texture2D" uid="uid://ch08qgaghhpol" path="res://assets/TurnOffSink/robinet-turn-1.png" id="5_s5bal"]
+[ext_resource type="Texture2D" uid="uid://h063fi2rch3p" path="res://assets/TurnOffSink/robinet-turn-2.png" id="6_mnp14"]
+[ext_resource type="Texture2D" uid="uid://bn7vv7i8mryj8" path="res://assets/TurnOffSink/wateflow.png" id="7_rul3g"]
+[ext_resource type="Script" path="res://scenes/TurnOffSink/Waterflow.gd" id="7_wf5i0"]
+[ext_resource type="Texture2D" uid="uid://dqrx4mwecb4dg" path="res://assets/TurnOffSink/wateflow2.png" id="8_yc7cn"]
+[ext_resource type="PackedScene" uid="uid://cq0i5dabdt1ig" path="res://scenes/vibrating_text.tscn" id="10_miyoo"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ei5s4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_qmsd8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_mnp14")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_s5bal")
+}],
+"loop": true,
+"name": &"turning_handle",
+"speed": 24.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q6bl0"]
+size = Vector2(205, 55)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ev2sv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_yc7cn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_rul3g")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_lcf0j"]
+
+[node name="TurnOffSinkGameplay" type="Node2D"]
+script = ExtResource("1_7mlj8")
+TimeLimit = 8
+WrongsThreshold = 0
+CorrectsThresholds = 1
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(332, 490)
+scale = Vector2(1.12222, 1.12222)
+texture = ExtResource("2_4jodq")
+
+[node name="Sink" type="Node2D" parent="."]
+z_index = 1
+script = ExtResource("3_20tuf")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Sink"]
+z_index = 2
+position = Vector2(444, 395)
+sprite_frames = SubResource("SpriteFrames_ei5s4")
+
+[node name="HandleHitbox" type="Area2D" parent="Sink"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sink/HandleHitbox"]
+position = Vector2(457.5, 208.5)
+shape = SubResource("RectangleShape2D_q6bl0")
+
+[node name="Waterflow" type="Node2D" parent="Sink"]
+position = Vector2(261, 716)
+script = ExtResource("7_wf5i0")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Sink/Waterflow"]
+position = Vector2(0, 138)
+sprite_frames = SubResource("SpriteFrames_ev2sv")
+frame_progress = 0.135576
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.301961, 0.298039, 0.427451, 1)
+position = Vector2(661, 494.875)
+scale = Vector2(155.5, 1218.25)
+texture = SubResource("PlaceholderTexture2D_lcf0j")
+
+[node name="VibratingText" parent="." instance=ExtResource("10_miyoo")]
+z_index = 20
+position = Vector2(310, 64)
+TextColor = Color(0.729412, 0.729412, 0.729412, 1)
+Text = "Tap ! Tapotez !"
+
+[connection signal="input_event" from="Sink/HandleHitbox" to="Sink" method="_on_handle_hitbox_input_event"]

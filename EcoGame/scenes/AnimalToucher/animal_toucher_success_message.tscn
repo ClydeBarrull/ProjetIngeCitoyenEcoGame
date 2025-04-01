@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://duxfgld23gcto"]
+
+[ext_resource type="PackedScene" uid="uid://dbc82t5m02cor" path="res://scenes/success_message.tscn" id="1_8a6jf"]
+[ext_resource type="Texture2D" uid="uid://c6gi3iweqmcgc" path="res://assets/AnimalToucher/Capture d’écran 2025-04-01 030951.png" id="2_sm8yc"]
+
+[node name="SuccessMessage" instance=ExtResource("1_8a6jf")]
+
+[node name="MinigamePreview" parent="." index="1"]
+position = Vector2(78.6666, -128)
+scale = Vector2(0.864536, 0.791444)
+texture = ExtResource("2_sm8yc")
+
+[node name="MinigameName" parent="." index="2"]
+text = "Tap or ignore !
+Caresser les
+animaux"
+
+[node name="MinigameInformations" parent="." index="3"]
+text = "Animals are highly susceptible to diseases from human hands. They can die from bacteria transferred from your hands that has no ill effect on you.  They can react badly to your perfume, shower gel and even worse BUG SPRAY. Insect repellent is toxic to many animals and you can end up killing them. Frogs, dolphins, whales, starfish and reptiles are particularly susceptible to human bacteria passed from your hands. 
+Feeding wild animals creates a  dependency on humans that diminishes the animals natural, survival abilities. In short, it’s dangerous for the animal because they can end up starving.
+Feeding interferes and upsets the balance of the food chain which, for birds, is often centred on eating wild fruits, seeds, small animals and insects.
+
+https://journeyofanomadicfamily.com/19-reasons-not-feed-touch-wild-animals/"

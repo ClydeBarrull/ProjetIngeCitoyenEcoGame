@@ -10,7 +10,7 @@ class_name VibratingText
 @onready var label : Label = $Text
 
 var Shaking : bool = true
-var shakeRectangle : Vector2i
+var shakeRectangle : Vector2i = Vector2i(2,2)
 var initialPos : Vector2i
 
 var howManyFramesBeforeMovement : int = 0
@@ -18,7 +18,7 @@ var howManyFramesBeforeMovement : int = 0
 func _ready():
 	label.text = Text
 	label.label_settings.font_color = TextColor
-	shakeRectangle = Vector2i(label.get_rect().size.x/Shake, label.get_rect().size.y/Shake)
+#	shakeRectangle = Vector2i(label.get_rect().size.x/Shake, label.get_rect().size.y/Shake)
 	initialPos = Vector2(global_position.x - label.get_rect().size.x,global_position.y)
 
 func _process(_delta):

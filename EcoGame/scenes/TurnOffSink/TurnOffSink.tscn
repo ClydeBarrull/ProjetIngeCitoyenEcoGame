@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://6emfmkiatqwt"]
+
+[ext_resource type="Script" path="res://scripts/minigame.gd" id="1_f7apa"]
+[ext_resource type="PackedScene" uid="uid://bgtlgmd0npijg" path="res://scenes/TurnOffSink/turn_off_sink_gameplay.tscn" id="2_eadlq"]
+[ext_resource type="PackedScene" uid="uid://cadbt3lm5nc44" path="res://scenes/TurnOffSink/success_messageTOS.tscn" id="3_su6kt"]
+[ext_resource type="PackedScene" uid="uid://puo5dopegvae" path="res://scenes/failure_message.tscn" id="4_brwh2"]
+
+[node name="Minigame" type="Node"]
+script = ExtResource("1_f7apa")
+
+[node name="TurnOffSinkGameplay" parent="." instance=ExtResource("2_eadlq")]
+
+[node name="SuccessMessage" parent="." instance=ExtResource("3_su6kt")]
+position = Vector2(-384, 465)
+
+[node name="FailureMessage" parent="." instance=ExtResource("4_brwh2")]
+z_index = 99
+
+[node name="MinigameName" parent="FailureMessage" index="1"]
+offset_left = -174.0
+offset_right = 175.0
+text = "Tap! Fermer le robinet"
+
+[node name="RichTextLabel" parent="FailureMessage" index="2"]
+offset_top = -74.0
+offset_bottom = 167.0
+text = "Laisser le robinet ouvert pendant 3 minutes pour rien équivaut à une perte de 36 litres d'eau. Faire la vaisselle à la main avec le robinet ouvert, peut entraîner un gaspillage d'eau compris entre 40 et 100 litres pour 4 couverts !
+Source : https://www.pau.fr/vie-quotidienne/eau-dechets-proprete/leau-potable-infos-et-conseils/ne-pas-laisser-couler-leau"
+
+[editable path="FailureMessage"]

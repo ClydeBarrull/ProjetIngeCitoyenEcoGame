@@ -1,0 +1,52 @@
+[gd_scene load_steps=5 format=3 uid="uid://cadbt3lm5nc44"]
+
+[ext_resource type="Script" path="res://scripts/success_message.gd" id="1_xqyno"]
+[ext_resource type="Texture2D" uid="uid://0wf5o0p6dhv7" path="res://assets/WoodPanelSuccess.png" id="2_280p4"]
+[ext_resource type="Texture2D" uid="uid://blffmjgrt1jdc" path="res://assets/TurnOffSink/Capture d’écran 2025-03-30 221203.png" id="3_5o5e5"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_47wkr"]
+font_size = 23
+
+[node name="SuccessMessage" type="Node2D"]
+position = Vector2(360, 371)
+scale = Vector2(1.5, 1.5)
+script = ExtResource("1_xqyno")
+
+[node name="WoodenPanel" type="Sprite2D" parent="."]
+texture = ExtResource("2_280p4")
+
+[node name="MinigamePreview" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(91.3333, -129.333)
+scale = Vector2(0.357724, 0.215948)
+texture = ExtResource("3_5o5e5")
+
+[node name="MinigameName" type="Label" parent="."]
+offset_left = -182.0
+offset_top = -164.0
+offset_bottom = -128.0
+text = "Tap!
+Fermer le
+robinet"
+label_settings = SubResource("LabelSettings_47wkr")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="MinigameInformations" type="RichTextLabel" parent="."]
+offset_left = -181.0
+offset_top = -58.0
+offset_right = 180.0
+offset_bottom = 185.0
+text = "Laisser le robinet ouvert pendant 3 minutes pour rien équivaut à une perte de 36 litres d'eau. Faire la vaisselle à la main avec le robinet ouvert, peut entraîner un gaspillage d'eau compris entre 40 et 100 litres pour 4 couverts !
+
+Quelques astuces pour réduire le gaspillage d’eau potable :
+
+Lors du brossage des dents, vous pouvez vous rincer la bouche à l'aide d'un verre prérempli.
+Pendant le lavage des mains, coupez l'eau. Vous pouvez les humidifier, appliquer du savon et couper l'eau pendant ce temps.
+Pendant la vaisselle, fermez le robinet. Il est inutile de laisser l'eau couler pendant que vous faites la vaisselle. Vous pouvez simplement remplir l'évier ou une bassine pour effectuer les rinçages nécessaires.
+Lors du rasage, coupez l'eau. Vous pouvez remplir l'évier au préalable pour vous raser sans perdre en confort.
+Pour avoir de l'eau fraîche, conservez une bouteille d'eau dans le réfrigérateur. Privilégiez une bouteille en verre.
+
+Source : https://www.pau.fr/vie-quotidienne/eau-dechets-proprete/leau-potable-infos-et-conseils/ne-pas-laisser-couler-leau"
+metadata/_edit_use_anchors_ = true

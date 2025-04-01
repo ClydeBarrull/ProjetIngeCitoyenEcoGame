@@ -1,0 +1,318 @@
+[gd_scene load_steps=34 format=3 uid="uid://br8e6jh7gqnfp"]
+
+[ext_resource type="Script" path="res://AnimalToucherGameplay.gd" id="1_avdk3"]
+[ext_resource type="Texture2D" uid="uid://dik1foa0drcxf" path="res://assets/AnimalToucher/Hooligans_Boss_Background.webp" id="2_6qhsc"]
+[ext_resource type="Script" path="res://scripts/AnimalToucher/Animals.gd" id="3_2n8l3"]
+[ext_resource type="Script" path="res://scripts/AnimalToucher/Animal.gd" id="3_ryqxj"]
+[ext_resource type="Texture2D" uid="uid://l4yrgny53oke" path="res://assets/AnimalToucher/herisson-bad.png" id="4_q6b81"]
+[ext_resource type="Texture2D" uid="uid://bwcv56kkoge57" path="res://assets/AnimalToucher/herisson-neutral.png" id="5_urlmx"]
+[ext_resource type="Texture2D" uid="uid://d34cumg4er6rd" path="res://assets/AnimalToucher/herisson-good.webp" id="6_xm0qj"]
+[ext_resource type="Texture2D" uid="uid://d246br6uqtiyx" path="res://assets/AnimalToucher/cat-neutral.png" id="7_cp3pm"]
+[ext_resource type="Texture2D" uid="uid://dk52xpqd14jgn" path="res://assets/AnimalToucher/cat-good.png" id="8_7ooj3"]
+[ext_resource type="Texture2D" uid="uid://c6f8t1li4i3jt" path="res://assets/AnimalToucher/cat-bad.png" id="8_tlda4"]
+[ext_resource type="Texture2D" uid="uid://c4lbanuenab7k" path="res://assets/AnimalToucher/dog-bad.png" id="9_bpe6o"]
+[ext_resource type="Texture2D" uid="uid://wf5acgemg6kn" path="res://assets/AnimalToucher/dog-neutral.png" id="10_fo8s2"]
+[ext_resource type="Texture2D" uid="uid://dwsxksm4ds361" path="res://assets/AnimalToucher/dog-good.png" id="11_st7sg"]
+[ext_resource type="Texture2D" uid="uid://bf7cclym6sotn" path="res://assets/AnimalToucher/2f7612946da04abe86e48bd609f3a2b2-removebg-preview.png" id="12_c5klh"]
+[ext_resource type="Texture2D" uid="uid://cq6pr7x70iryt" path="res://assets/AnimalToucher/hamster-neutral.png" id="13_swbrg"]
+[ext_resource type="Texture2D" uid="uid://co006culcjidq" path="res://assets/AnimalToucher/hasmter-good.png" id="14_5qkr4"]
+[ext_resource type="Texture2D" uid="uid://dbg5vawtcqlfg" path="res://assets/AnimalToucher/frog-bad.png" id="15_ome51"]
+[ext_resource type="Texture2D" uid="uid://cm7vq0k7u5el1" path="res://assets/AnimalToucher/frog-neutral.png" id="16_mu82b"]
+[ext_resource type="Texture2D" uid="uid://cyp3xufcprjk1" path="res://assets/AnimalToucher/frog-good.png" id="17_edj61"]
+[ext_resource type="Texture2D" uid="uid://l8ayp1faio8o" path="res://assets/AnimalToucher/lezard-bad.png" id="18_hu41y"]
+[ext_resource type="Texture2D" uid="uid://dubbejxmx88a" path="res://assets/AnimalToucher/lezard-neutral.png" id="19_et6ub"]
+[ext_resource type="Texture2D" uid="uid://dxqxntmsepcm8" path="res://assets/AnimalToucher/lezard-good.png" id="20_mbp6g"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_x7poj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_q6b81")
+}],
+"loop": true,
+"name": &"bad",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_urlmx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_xm0qj")
+}],
+"loop": true,
+"name": &"good",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e04nw"]
+size = Vector2(224, 142)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o52qr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_tlda4")
+}],
+"loop": true,
+"name": &"bad",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_cp3pm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_7ooj3")
+}],
+"loop": true,
+"name": &"good",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bi1sc"]
+size = Vector2(154, 219)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ly7h6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_bpe6o")
+}],
+"loop": true,
+"name": &"bad",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_fo8s2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_st7sg")
+}],
+"loop": true,
+"name": &"good",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t6ywb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_c5klh")
+}],
+"loop": true,
+"name": &"bad",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_swbrg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_5qkr4")
+}],
+"loop": true,
+"name": &"good",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gkych"]
+size = Vector2(142, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jr24f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_ome51")
+}],
+"loop": true,
+"name": &"bad",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_mu82b")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_edj61")
+}],
+"loop": true,
+"name": &"good",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j2g04"]
+size = Vector2(148, 116)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_i2cop"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_hu41y")
+}],
+"loop": true,
+"name": &"bad",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_et6ub")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_mbp6g")
+}],
+"loop": true,
+"name": &"good",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v6110"]
+size = Vector2(221, 85)
+
+[node name="MinigameGameplay" type="Node2D"]
+position = Vector2(-2, 4)
+script = ExtResource("1_avdk3")
+TimeLimit = 12
+WrongsThreshold = 2
+CorrectsThresholds = 4
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(148.502, 536.504)
+rotation = 6.28319
+scale = Vector2(1.91406, 2.25309)
+texture = ExtResource("2_6qhsc")
+flip_h = true
+
+[node name="Animals" type="Node2D" parent="."]
+position = Vector2(7.50165, 123.504)
+script = ExtResource("3_2n8l3")
+
+[node name="Hedgehog" type="Node2D" parent="Animals"]
+visible = false
+position = Vector2(415, 599)
+script = ExtResource("3_ryqxj")
+touchable = false
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Animals/Hedgehog"]
+scale = Vector2(0.407407, 0.407408)
+sprite_frames = SubResource("SpriteFrames_x7poj")
+
+[node name="Area2D" type="Area2D" parent="Animals/Hedgehog"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Animals/Hedgehog/Area2D"]
+position = Vector2(-6, -1)
+shape = SubResource("RectangleShape2D_e04nw")
+
+[node name="Cat" type="Node2D" parent="Animals"]
+visible = false
+position = Vector2(380, 556)
+script = ExtResource("3_ryqxj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Animals/Cat"]
+scale = Vector2(0.563441, 0.563441)
+sprite_frames = SubResource("SpriteFrames_o52qr")
+
+[node name="Area2D" type="Area2D" parent="Animals/Cat"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Animals/Cat/Area2D"]
+position = Vector2(33, -4.5)
+shape = SubResource("RectangleShape2D_bi1sc")
+
+[node name="Dog" type="Node2D" parent="Animals"]
+visible = false
+position = Vector2(340, 594)
+script = ExtResource("3_ryqxj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Animals/Dog"]
+scale = Vector2(0.417062, 0.449321)
+sprite_frames = SubResource("SpriteFrames_ly7h6")
+
+[node name="Area2D" type="Area2D" parent="Animals/Dog"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Animals/Dog/Area2D"]
+position = Vector2(8, 7)
+shape = SubResource("RectangleShape2D_bi1sc")
+
+[node name="Hamster" type="Node2D" parent="Animals"]
+visible = false
+position = Vector2(346, 608)
+script = ExtResource("3_ryqxj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Animals/Hamster"]
+scale = Vector2(0.527316, 0.527316)
+sprite_frames = SubResource("SpriteFrames_t6ywb")
+
+[node name="Area2D" type="Area2D" parent="Animals/Hamster"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Animals/Hamster/Area2D"]
+position = Vector2(11, 6)
+shape = SubResource("RectangleShape2D_gkych")
+
+[node name="Frog" type="Node2D" parent="Animals"]
+visible = false
+position = Vector2(384, 637)
+script = ExtResource("3_ryqxj")
+touchable = false
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Animals/Frog"]
+scale = Vector2(0.32, 0.32)
+sprite_frames = SubResource("SpriteFrames_jr24f")
+flip_h = true
+
+[node name="Area2D" type="Area2D" parent="Animals/Frog"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Animals/Frog/Area2D"]
+position = Vector2(1, -4)
+shape = SubResource("RectangleShape2D_j2g04")
+
+[node name="Lizard" type="Node2D" parent="Animals"]
+visible = false
+position = Vector2(417, 631)
+script = ExtResource("3_ryqxj")
+touchable = false
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Animals/Lizard"]
+position = Vector2(-26, 12)
+scale = Vector2(0.429943, 0.462963)
+sprite_frames = SubResource("SpriteFrames_i2cop")
+flip_h = true
+
+[node name="Area2D" type="Area2D" parent="Animals/Lizard"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Animals/Lizard/Area2D"]
+position = Vector2(-27.5, 13.5)
+shape = SubResource("RectangleShape2D_v6110")
+
+[connection signal="input_event" from="Animals/Lizard/Area2D" to="Animals/Lizard" method="_on_area_2d_input_event"]

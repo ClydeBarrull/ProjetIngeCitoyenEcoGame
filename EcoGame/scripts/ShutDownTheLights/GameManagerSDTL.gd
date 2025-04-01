@@ -101,6 +101,8 @@ func update_characters_visibility():
 
 func _check_game_status():
 	if visible_character_count < 3:
+		print("LIL GUYS WON")
 		Wins()
 	else:
+		print("LIL GUYS FAIL")
 		Fail()
